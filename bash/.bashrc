@@ -19,6 +19,7 @@ alias ll="ls -l --group-directories-first"
 alias la="ls -lA --group-directories-first"
 alias bc="bc -lq"
 alias notes="ranger --cmd='set column_ratios 1,2' ~/Documents/notes"
+alias calc="calcurse"
 alias events="calcurse -d 7"
 alias todo="calcurse -t"
 
