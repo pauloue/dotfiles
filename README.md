@@ -20,14 +20,14 @@ See [this post](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-man
 
 For external dependencies such as vim plugins.
 
-Add subtree
+### Add subtree
 
     $ git remote add -f <name> <url>
     $ git subtree add -P <path in repo> <name> <branch> --squash
 
 Now normal git commands can be used on the subtree. Commits to the subtree and main repo should be kept separate.
 
-Update subtree
+### Update subtree
 
     $ git fetch <name> <branch>
     $ git subtree pull -P <path in repo> <name> <branch> --squash
