@@ -8,7 +8,9 @@ First install stow through your package manager.
 
 Then clone the repo in your home directory, cd into it and run:
 
-    $ stow bash vim <package>
+    $ stow bash
+    $ stow vim
+    $ stow PACKAGE(s)
 
 This will symlink all the package's configuration files into the parent directory. Use the `-D` option to uninstall the configuration files for the package.
 
