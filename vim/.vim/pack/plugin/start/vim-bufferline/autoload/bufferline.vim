@@ -101,7 +101,16 @@ function! s:echo()
     let line = strpart(line, 0, width)
   endif
 
-  echo line
+  let num_buffs = 0
+  for buf in getbufinfo()
+    if buf.listed
+      let num_buffs += 1
+    endif
+  endfor
+
+  if num_buffs > 1
+    echo line
+  endif
 
   if &updatetime != s:updatetime
     let &updatetime = s:updatetime
