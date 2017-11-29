@@ -1,0 +1,16 @@
+[user]
+    name = Paul Ouellette
+    email = oue.paul18@gmail.com
+
+[credential "https://github.com"]
+    username = pauloue
+
+[credential "https://gitlab.com"]
+    username = pauloue
+
+[credential]
+    helper = cache
+
+[alias]
+    st = status
+    ci = commit

@@ -1,0 +1,2 @@
+export XKB_DEFAULT_OPTIONS=caps:escape
+sway
