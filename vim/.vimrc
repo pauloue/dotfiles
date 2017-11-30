@@ -34,6 +34,9 @@ let g:bufferline_rotate = 2
 " Enter commands without shift key
 nnoremap ; :
 
+" Use <F2> to save
+nnoremap <F2> :w<CR>
+
 " Fly between buffers
 nnoremap <leader>b :b <C-Z><S-Tab>
 " Cycle between buffers
@@ -51,8 +54,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " <C-L> (redraw screen) also clears search highlighting
 nnoremap <silent> <C-L> :nohl<CR><C-L>
 
-" <F2> toggles spellcheck on/off
-nmap <silent> <F2> :setlocal spell! spell?<CR>
+" <F3> toggles spellcheck on/off
+nmap <silent> <F3> :setlocal spell! spell?<CR>
 
 " Use temp file for copy/paste between Vim sessions
 vmap <leader>y :w! /tmp/vimclip<CR>
