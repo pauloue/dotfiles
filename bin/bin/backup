@@ -6,8 +6,8 @@
 
 set -e
 
-BACKUP_DIR=/run/media/paul/Elements/backups
-DEST=backup-$(date +%F)
+BACKUP_DIR="/run/media/paul/Elements/backups"
+DEST="backup-$(date +%F)"
 
 case $1 in
     "" ) action="backup" ;;
@@ -20,35 +20,25 @@ else
     echo "Error: $BACKUP_DIR: No such file or directory"; exit 1
 fi
 
-# works? clean?
-if [[ -f last-backup ]]; then
-    lastBackup=$(< last-backup)
-else
-    lastBackup=$DEST
-fi
+[[ -f last-backup ]] && lastBackup="$(< last-backup)"
 
 backup() {
-    echo -e "Backing up $HOME to $BACKUP_DIR/$DEST\n"
-    # works? clean?
-    if [[ $lastBackup != $DEST ]]; then
+    read -p "Enter a description for the backup: " desc
+    echo "Backing up $HOME to $BACKUP_DIR/$DEST"
+    if [[ $lastBackup && $lastBackup != $DEST ]]; then
         mv $lastBackup $DEST
+        backup="-b --backup-dir=../$lastBackup"
     fi
-    if [[ -f $BACKUP_DIR/exclude ]]; then
-        exclude="--exclude-from=exclude"
-    fi
-    if [[ $lastBackup != $DEST ]]; then
-        backup="-b --backup-dir=$lastBackup"
-    fi
+    [[ -f $BACKUP_DIR/exclude ]] && exclude="--exclude-from=exclude"
     rsync -azh --del $exclude --delete-excluded $backup --info=progress2,stats \
         $HOME/ $DEST
+    [[ "$desc" ]] && echo "$desc" > $DEST/backup-info
     echo $DEST > last-backup
-    read -p "Enter a description for the backup: " desc
-    # press enter to cancel..
-    echo $desc > $(cat last-backup)/backup-info
 }
+
 restore() {
     if [[ -d $lastBackup ]]; then
-        echo -e "Restoring $BACKUP_DIR/$lastBackup to $HOME/$lastBackup\n"
+        echo "Restoring $BACKUP_DIR/$lastBackup to $HOME/$lastBackup"
         rsync -azh --del --info=progress2,stats $lastBackup $HOME
     else
         echo "Error: Backup not found"; exit 1
