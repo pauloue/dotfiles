@@ -9,6 +9,7 @@ set confirm             " Show dialog when command fails
 set laststatus=2        " Always show status line
 set showcmd             " Show partial commands
 set wildmenu            " Show tab completion menu
+set wildignorecase      " Ignore case when completing file names
 set mouse=a             " Enable mouse
 set belloff=all         " Disable beeping
 set number              " Show line numbers
