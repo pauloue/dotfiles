@@ -19,7 +19,6 @@ set scrolloff=5         " Show 5 lines around the cursor
 set wildcharm=<C-Z>     " Key to trigger expansion in mappings
 let mapleader=","       " Easier to reach leader key
 
-set tabstop=4           " Tab is 4 columns wide
 set shiftwidth=4        " Use 4 spaces for indent
 set softtabstop=-1      " Backspace deletes shiftwidth spaces
 set expandtab           " Expand tabs to spaces
@@ -34,9 +33,6 @@ let g:bufferline_rotate = 2
 
 " Enter commands without shift key
 nnoremap ; :
-
-" Use <F2> to save
-nnoremap <F2> :w<CR>
 
 " Fly between buffers
 nnoremap <leader>b :b <C-Z><S-Tab>
@@ -55,19 +51,15 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " <C-L> (redraw screen) also clears search highlighting
 nnoremap <silent> <C-L> :nohl<CR><C-L>
 
-" <F3> toggles spellcheck on/off
-nmap <silent> <F3> :setlocal spell! spell?<CR>
-
-" Use temp file for copy/paste between Vim sessions
-vmap <leader>y :w! /tmp/vimclip<CR>
-nmap <leader>p :r! cat /tmp/vimclip<CR>
+" <F2> toggles spellcheck on/off
+nmap <silent> <F2> :setlocal spell! spell?<CR>
 
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
 
 " General file type settings
-au FileType css setl ts=2 sw=2
-au FileType html setl ts=2 sw=2 spell
+au FileType css setl sw=2
+au FileType html setl sw=2 spell
 au FileType markdown setl spell
 au FileType gitcommit setl spell
 
