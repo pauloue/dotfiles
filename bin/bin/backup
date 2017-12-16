@@ -25,21 +25,21 @@ fi
 backup() {
     read -p "Enter a description for the backup: " desc
     echo "Backing up $HOME to $BACKUP_DIR/$DEST"
-    if [[ $lastBackup && $lastBackup != $DEST ]]; then
-        mv $lastBackup $DEST
+    if [[ $lastBackup && $lastBackup != "$DEST" ]]; then
+        mv "$lastBackup" "$DEST"
         backup="-b --backup-dir=../$lastBackup"
     fi
     [[ -f $BACKUP_DIR/exclude ]] && exclude="--exclude-from=exclude"
     rsync -azh --del $exclude --delete-excluded $backup --info=progress2,stats \
-        $HOME/ $DEST
-    [[ "$desc" ]] && echo "$desc" > $DEST/backup-info
-    echo $DEST > last-backup
+        "$HOME/" "$DEST"
+    [[ "$desc" ]] && echo "$desc" > "$DEST/backup-info"
+    echo "$DEST" > last-backup
 }
 
 restore() {
     if [[ -d $lastBackup ]]; then
         echo "Restoring $BACKUP_DIR/$lastBackup to $HOME/$lastBackup"
-        rsync -azh --del --info=progress2,stats $lastBackup $HOME
+        rsync -azh --del --info=progress2,stats "$lastBackup" "$HOME"
     else
         echo "Error: Backup not found"; exit 1
     fi
