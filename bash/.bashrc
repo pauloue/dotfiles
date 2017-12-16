@@ -17,6 +17,9 @@ export GPGKEY=6525CDAF9FC4718E
 
 alias ll="ls -l --group-directories-first"
 alias la="ls -lA --group-directories-first"
+alias dnfs="dnf search"
+alias dnfi="sudo dnf install"
+alias dnfr="sudo dnf remove"
 alias bc="bc -lq"
 alias notes="ranger --cmd='set column_ratios 1,2' ~/Documents/notes"
 alias calc="calcurse"
@@ -25,6 +28,7 @@ alias todo="calcurse -t"
 
 conf() {
     case $1 in
+        bash ) vim ~/.bashrc ;;
         git ) vim ~/.config/git/config ;;
         sway ) vim ~/.config/sway/config ;;
         * ) ranger --cmd='set hidden_filter ^\.git$|^\.gitignore$' ~/dotfiles ;;
