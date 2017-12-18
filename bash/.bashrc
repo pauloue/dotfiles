@@ -18,6 +18,7 @@ export GPGKEY=6525CDAF9FC4718E
 alias ll="ls -l --group-directories-first"
 alias la="ls -lA --group-directories-first"
 alias dnfs="dnf search"
+alias dnfu="sudo dnf upgrade"
 alias dnfi="sudo dnf install"
 alias dnfr="sudo dnf remove"
 alias bc="bc -lq"
