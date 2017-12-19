@@ -17,7 +17,7 @@ set colorcolumn=80      " Highlight 80th column
 set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set scrolloff=5         " Show 5 lines around the cursor
 set wildcharm=<C-Z>     " Key to trigger expansion in mappings
-let mapleader=","       " Easier to reach leader key
+set ttimeoutlen=100     " Wait up to 100ms after Esc for special key
 
 set shiftwidth=4        " Use 4 spaces for indent
 set softtabstop=-1      " Backspace deletes shiftwidth spaces
@@ -30,9 +30,6 @@ set smartcase           " except when using capital letters
 
 let g:bufferline_show_bufnr = 0
 let g:bufferline_rotate = 2
-
-" Enter commands without shift key
-nnoremap ; :
 
 " Fly between buffers
 nnoremap <leader>b :b <C-Z><S-Tab>
