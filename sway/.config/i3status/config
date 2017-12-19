@@ -27,8 +27,8 @@ volume master {
 
 battery all {
     format = "%status %percentage"
-    status_chr = "⚡"
-    status_bat = "🔋"
+    status_chr = "CHR"
+    status_bat = "BAT"
     threshold_type = percentage
     low_threshold = 20
     integer_battery_capacity = true
