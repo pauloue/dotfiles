@@ -57,8 +57,7 @@ hi PmenuThumb   ctermfg=243 guifg=#767676
 hi Search       ctermfg=0   guifg=#000000 ctermbg=149 guibg=#afdf5f
 hi SignColumn   ctermfg=248 guifg=#a8a8a8
 hi SpecialKey   ctermfg=77  guifg=#5fdf5f
-" hi SpellBad     ctermfg=160 guifg=fg      ctermbg=bg                cterm=underline               guisp=#df0000
-hi SpellBad                               ctermbg=238                                               guisp=#df0000
+hi SpellBad     ctermfg=160 guifg=fg      ctermbg=bg                cterm=underline               guisp=#df0000
 hi SpellCap     ctermfg=189 guifg=#dfdfff ctermbg=bg  guibg=bg      cterm=underline gui=underline
 hi SpellRare    ctermfg=168 guifg=#df5f87 ctermbg=bg  guibg=bg      cterm=underline gui=underline
 hi SpellLocal   ctermfg=98  guifg=#875fdf ctermbg=bg  guibg=bg      cterm=underline gui=underline
