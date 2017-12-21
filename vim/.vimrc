@@ -79,3 +79,6 @@ au BufEnter /tmp/calcurse-note.*,~/Documents/notes/* set ft=markdown
 if filereadable("/home/paul/.password-store/.vimrc")
     au BufEnter /dev/shm/pass.* source ~/.password-store/.vimrc
 endif
+
+" Abbreviations
+ia teh the
