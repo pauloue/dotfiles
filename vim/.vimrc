@@ -82,3 +82,5 @@ endif
 
 " Abbreviations
 ia teh the
+
+ca vb vert sb
