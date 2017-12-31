@@ -44,8 +44,5 @@ restore() {
     fi
 }
 
-if [[ $action == "backup" ]]; then
-    backup
-elif [[ $action == "restore" ]]; then
-    restore
-fi
+[[ $action == "backup" ]] && backup
+[[ $action == "restore" ]] && restore
