@@ -15,6 +15,7 @@ export EDITOR="$VISUAL"
 
 export GPGKEY=6525CDAF9FC4718E
 
+alias diff="diff --color=auto"
 alias ll="ls -l --group-directories-first"
 alias la="ls -lA --group-directories-first"
 alias dnfs="dnf search"
