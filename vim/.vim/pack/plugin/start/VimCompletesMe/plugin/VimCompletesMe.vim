@@ -53,7 +53,7 @@ function! s:vim_completes_me(shift_tab)
   if is_omni_pattern && (!empty(&omnifunc))
     " Check position so that we can fallback if at the same pos.
     if get(b:, 'tab_complete_pos', []) == pos && b:completion_tried
-      let exp = "\<C-x>" . dirs[!dir]
+      let exp = "\<C-x>" . dirs[dir]
     else
       echo "Looking for members..."
       let exp = (!empty(&completefunc) && map ==? "user") ? "\<C-x>\<C-u>" : "\<C-x>\<C-o>"
@@ -68,7 +68,7 @@ function! s:vim_completes_me(shift_tab)
   " First fallback to keyword completion if special completion was already tried.
   if exists('b:completion_tried') && b:completion_tried
     let b:completion_tried = 0
-    return "\<C-e>" . dirs[!dir]
+    return "\<C-e>" . dirs[dir]
   endif
 
   " Fallback
@@ -81,7 +81,7 @@ function! s:vim_completes_me(shift_tab)
   elseif map ==? "vim"
     return "\<C-x>\<C-v>"
   else
-    return dirs[!dir]
+    return dirs[dir]
   endif
 endfunction
 
