@@ -31,6 +31,8 @@ set smartcase           " except when using capital letters
 let g:bufferline_show_bufnr = 0
 let g:bufferline_rotate = 2
 
+let g:vcm_direction='p'
+
 " Fly between buffers
 nnoremap <leader>b :b <C-Z><S-Tab>
 " Cycle between buffers
