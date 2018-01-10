@@ -14,7 +14,7 @@ set $right l
 # Terminal
 set $term gnome-terminal
 # Application launcher
-set $menu dmenu_run
+set $menu dmenu_run -i
 
 # Hide title bars
 default_border pixel
@@ -62,7 +62,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     bindsym $mod+d exec $menu
 
     # passwords
-    bindsym $mod+p exec passmenu
+    bindsym $mod+p exec passmenu -i
 
     # take a screenshot
     bindsym Print exec swaygrab
