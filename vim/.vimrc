@@ -53,6 +53,9 @@ nnoremap <silent> <C-L> :nohl<CR><C-L>
 " <F2> toggles spellcheck on/off
 nmap <silent> <F2> :setlocal spell! spell?<CR>
 
+" Insert date
+nmap <leader>f "=strftime('%F')<CR>p
+
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
 
