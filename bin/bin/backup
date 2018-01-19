@@ -30,7 +30,7 @@ backup() {
         backup="-b --backup-dir=../$lastBackup"
     fi
     [[ -f $BACKUP_DIR/exclude ]] && exclude="--exclude-from=exclude"
-    rsync -azh $exclude $backup --info=progress2,stats "$HOME/" "$DEST"
+    rsync -azh --del $exclude $backup --info=progress2,stats "$HOME/" "$DEST"
     [[ "$desc" ]] && echo "$desc" > "$DEST/backup-info"
     echo "$DEST" > last-backup
 }
