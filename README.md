@@ -7,30 +7,24 @@ My configuration files, managed with
 
 First install stow through your package manager.
 
-Then clone the repo in your home directory, cd into it and run:
+Then clone the repo, cd into it and run:
 
     $ stow bash
     $ stow vim
     $ stow PACKAGE(s)
 
 This will symlink all the package's configuration files into the parent
-directory. Use the `-D` option to uninstall the configuration files for the
-package.
-
-See [this post](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
-for more info.
+directory. Use `-t` to specify a different target directory and `-D` to
+uninstall the configuration files for a package.
 
 ## Git subtree
 
 For external dependencies such as vim plugins.
 
-### Add subtree
+To add a subtree:
 
     $ git subtree add -P <path in repo> <url> <branch> --squash
 
 Now normal git commands can be used on the subtree. Commits to the subtree and
-main repo should be kept separate.
-
-### Update subtree
-
-    $ git subtree pull -P <path in repo> <url> <branch> --squash
+main repo should be kept separate. To update the subtree use the same command,
+replacing 'add' with 'pull'.
