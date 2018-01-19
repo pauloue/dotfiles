@@ -24,15 +24,14 @@ alias dnfi="sudo dnf install"
 alias dnfr="sudo dnf remove"
 alias bc="bc -lq"
 alias notes="ranger --cmd='set column_ratios 1,2' ~/Documents/notes"
-alias calc="calcurse"
-alias events="calcurse -d 7"
-alias todo="calcurse -t"
+alias todo="vim ~/Documents/notes/todo ~/Documents/notes/done-list"
 
 conf() {
     case $1 in
         bash ) vim ~/.bashrc ;;
         git ) vim ~/.config/git/config ;;
         sway ) vim ~/.config/sway/config ;;
-        * ) ranger --cmd='set hidden_filter ^\.git$|^\.gitignore$' ~/dotfiles ;;
+        * ) ranger --cmd='set hidden_filter ^\.git$|^\.gitignore$' \
+            ~/src/dotfiles ;;
     esac
 }
