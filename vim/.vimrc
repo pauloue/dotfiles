@@ -62,7 +62,7 @@ au VimResized * wincmd =
 " General file type settings
 au FileType css setl sw=2
 au FileType html setl sw=2 spell
-au FileType markdown setl spell
+au FileType markdown setl spell tw=79
 au FileType gitcommit setl spell
 
 augroup Templates
