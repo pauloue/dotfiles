@@ -52,6 +52,8 @@ nnoremap <silent> <C-L> :nohl<CR><C-L>
 
 " <F2> toggles spellcheck on/off
 nmap <silent> <F2> :setlocal spell! spell?<CR>
+" Replace word with first spell suggestion
+nmap <leader>s 1z=
 
 " Insert date
 nmap <leader>f "=strftime('%F')<CR>p
