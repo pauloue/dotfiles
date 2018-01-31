@@ -14,6 +14,7 @@ set mouse=a             " Enable mouse
 set belloff=all         " Disable beeping
 set number              " Show line numbers
 set colorcolumn=80      " Highlight 80th column
+set textwidth=79        " Break lines at 79 cols
 set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set scrolloff=5         " Show 5 lines around the cursor
 set wildcharm=<C-Z>     " Key to trigger expansion in mappings
@@ -64,7 +65,7 @@ au VimResized * wincmd =
 " General file type settings
 au FileType css setl sw=2
 au FileType html setl sw=2 spell
-au FileType markdown setl spell tw=79
+au FileType markdown setl spell
 au FileType gitcommit setl spell
 
 augroup Templates
