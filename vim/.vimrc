@@ -8,17 +8,17 @@ set hidden              " Don't unload buffer when switched away
 set confirm             " Show dialog when command fails
 set laststatus=2        " Always show status line
 set showcmd             " Show partial commands
+set scrolloff=5         " Show 5 lines around the cursor
 set wildmenu            " Show tab completion menu
 set wildignorecase      " Ignore case when completing file names
+set wildcharm=<C-Z>     " Key to trigger expansion in mappings
 set mouse=a             " Enable mouse
 set belloff=all         " Disable beeping
+set ttimeoutlen=100     " Decrease Esc delay
+set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set number              " Show line numbers
 set colorcolumn=80      " Highlight 80th column
 set textwidth=79        " Break lines at 79 cols
-set bs=indent,eol,start " Allow backspacing over everything in insert mode
-set scrolloff=5         " Show 5 lines around the cursor
-set wildcharm=<C-Z>     " Key to trigger expansion in mappings
-set ttimeoutlen=100     " Wait up to 100ms after Esc for special key
 
 set shiftwidth=4        " Use 4 spaces for indent
 set softtabstop=-1      " Backspace deletes shiftwidth spaces
@@ -63,10 +63,11 @@ nmap <leader>f "=strftime('%F')<CR>p
 au VimResized * wincmd =
 
 " General file type settings
-au FileType css setl sw=2
-au FileType html setl sw=2 spell
-au FileType markdown setl spell
 au FileType gitcommit setl spell
+au FileType html setl sw=2 spell
+au FileType css setl sw=2
+au FileType markdown setl spell
+au FileType lua setl noexpandtab sw=0
 
 augroup Templates
     au!
