@@ -17,8 +17,7 @@ set belloff=all         " Disable beeping
 set ttimeoutlen=100     " Decrease Esc delay
 set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set number              " Show line numbers
-set colorcolumn=80      " Highlight 80th column
-set textwidth=79        " Break lines at 79 cols
+set colorcolumn=81      " Highlight 81st column
 
 set shiftwidth=4        " Use 4 spaces for indent
 set softtabstop=-1      " Backspace deletes shiftwidth spaces
@@ -64,22 +63,14 @@ au VimResized * wincmd =
 
 " General file type settings
 au FileType gitcommit setl spell
-au FileType html setl sw=2 spell
+au FileType python setl cc=80
+au FileType html setl sw=2 spell tw=80
 au FileType css setl sw=2
-au FileType markdown setl spell
+au FileType markdown setl spell tw=80
 au FileType lua setl noexpandtab sw=0
 
-augroup Templates
-    au!
-    " Read in template files
-    au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
-    au BufNewFile ~/cs2017-18/*.py %d | 0r ~/.vim/templates/cs-2.py
-    " Evaluate commands between [[ and ]] in templates
-    " http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates
-    au BufNewFile * %substitute#\[\[\(.\{-\}\)\]\]#\=eval(submatch(1))#ge
-    " Move cursor to end of file
-    au BufNewFile * norm G
-augroup END
+" Read in template files
+au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.'.expand("<afile>:e") | norm G
 
 " Use markdown for notes
 au BufEnter /tmp/calcurse-note.*,~/Documents/notes/* set ft=markdown
