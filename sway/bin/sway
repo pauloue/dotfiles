@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export XKB_DEFAULT_OPTIONS=caps:escape
 brightnessctl s 30%

@@ -8,7 +8,7 @@ set hidden              " Don't unload buffer when switched away
 set confirm             " Show dialog when command fails
 set laststatus=2        " Always show status line
 set showcmd             " Show partial commands
-set scrolloff=5         " Show 5 lines around the cursor
+set scrolloff=3         " Show 3 lines around the cursor
 set wildmenu            " Show tab completion menu
 set wildignorecase      " Ignore case when completing file names
 set wildcharm=<C-Z>     " Key to trigger expansion in mappings
@@ -18,6 +18,9 @@ set ttimeoutlen=100     " Decrease Esc delay
 set bs=indent,eol,start " Allow backspacing over everything in insert mode
 set number              " Show line numbers
 set colorcolumn=81      " Highlight 81st column
+" Keep swap files out of the way
+set backupdir=~/.cache//
+set directory=~/.cache//
 
 set shiftwidth=4        " Use 4 spaces for indent
 set softtabstop=-1      " Backspace deletes shiftwidth spaces
@@ -62,6 +65,7 @@ nmap <leader>f "=strftime('%F')<CR>p
 au VimResized * wincmd =
 
 " General file type settings
+au FileType text setl tw=80
 au FileType gitcommit setl spell
 au FileType python setl cc=80
 au FileType html setl sw=2 spell tw=80
