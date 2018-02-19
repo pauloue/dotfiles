@@ -77,7 +77,7 @@ au FileType lua setl noexpandtab sw=0
 au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.'.expand("<afile>:e") | norm G
 
 " Use markdown for notes
-au BufEnter /tmp/calcurse-note.*,~/Documents/notes/* set ft=markdown
+au BufEnter ~/Documents/notes/* set ft=markdown
 
 " Settings for pass
 if filereadable("/home/paul/.password-store/.vimrc")
