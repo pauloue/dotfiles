@@ -2,9 +2,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
+# Logo key
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -13,59 +11,62 @@ set $up k
 set $right l
 # Terminal
 set $term gnome-terminal
-# Application launcher
-set $menu dmenu_run -i
+
+font pango:monospace 9
 
 # Hide title bars
 default_border pixel
 # Hide window borders if workspace has one window
 hide_edge_borders smart
-
-# Repeating a workspace switch command will switch back to prior workspace
+# Repeating a workspace switch command switches back to prior workspace
 workspace_auto_back_and_forth yes
 
-### Output configuration
-#
+# for_window settings
+for_window [class="Minetest"] floating enable
+for_window [class="Gnome-calculator"] floating enable
+
 # Wallpaper
 output * bg $HOME/Pictures/backgrounds/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Input configuration
-#
+# Input configuration
 input "2:14:ETPS/2_Elantech_Touchpad" {
     tap enabled
     dwt disabled
     natural_scroll enabled
 }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
-# Basics:
+# Basics
 #
-    # start a terminal
+    # terminal
     bindsym $mod+Return exec $term
-    # open firefox
+    # firefox
     bindsym $mod+F1 exec firefox
-    # open nautilus
+    # nautilus
     bindsym $mod+F2 exec nautilus
-    # open ranger
+    # ranger
     bindsym $mod+F3 exec $term -- ranger
+    # calculator
+    bindsym $mod+F4 exec gnome-calculator
 
     # kill focused window
     bindsym $mod+Shift+q kill
 
-    # start launcher
-    bindsym $mod+d exec $menu
+    # dmenu
+    bindsym $mod+d exec dmenu_run -i
+
+    # Use Mouse+$mod to drag floating windows
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    floating_modifier $mod normal
 
     # passwords
     bindsym $mod+p exec passmenu -i
 
     # take a screenshot
     bindsym Print exec swaygrab
+    bindsym Shift+Print exec swaygrab -f
 
     # volume controls
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -75,20 +76,15 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     # lock the screen
     bindsym $mod+0 exec swaylock -c 323232
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    floating_modifier $mod normal
-
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
 #
-# Moving around:
+# Moving around
 #
-    # Move your focus around
+    # Move focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
@@ -110,10 +106,10 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
 #
-# Workspaces:
+# Workspaces
 #
     # switch to workspace
-    bindsym $mod+1 workspace 1 
+    bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
     bindsym $mod+3 workspace 3
     bindsym $mod+4 workspace 4
@@ -132,77 +128,65 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     bindsym $mod+Shift+7 move container to workspace 7
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
-    # Note: workspaces can have any name you want, not just numbers.
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    # switch to previously focused workspace
+    bindsym $mod+Tab workspace back_and_forth
+    # move container to previous workspace
+    bindsym $mod+Shift+Tab move container to workspace back_and_forth
+#
+# Layout stuff
+#
+    # vim-style window splits
+    bindsym $mod+s split v
+    bindsym $mod+v split h
 
-    # Make the current focus fullscreen
+    # change layouts with $mod+,./
+    bindsym $mod+comma layout stacking
+    bindsym $mod+period layout tabbed
+    bindsym $mod+slash layout toggle split
+
+    # toggle fullscreen
     bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
+    # toggle between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
+    # swap focus between tiling and floating windows
     bindsym $mod+space focus mode_toggle
 
-    # move focus to the parent container
+    # focus the parent container
     bindsym $mod+a focus parent
 #
-# Scratchpad:
+# Scratchpad
 #
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
+    # move focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
+    # show next scratchpad window
     bindsym $mod+minus scratchpad show
 #
-# Resizing containers:
+# Vim-style resizing
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 10 px or 10 ppt
-    bindsym $down resize grow height 10 px or 10 ppt
-    bindsym $up resize shrink height 10 px or 10 ppt
-    bindsym $right resize grow width 10 px or 10 ppt
-
-    # ditto, with arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Shift+comma resize shrink width 10 px or 10 ppt
+    bindsym Shift+period resize grow width 10 px or 10 ppt
+    bindsym minus resize shrink height 10 px or 10 ppt
+    bindsym Shift+equal resize grow height 10 px or 10 ppt
 
     # return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+w mode "resize"
 
 #
-# Status Bar:
+# Status Bar
 #
-# Read `man 5 sway-bar` for more information about this section.
 bar {
     status_command i3status
+    font pango:monospace 10
     position top
     separator_symbol "  "
-
     colors {
         background #323232
         inactive_workspace #323232 #323232 #888888
