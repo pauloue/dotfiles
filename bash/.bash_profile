@@ -5,6 +5,8 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-# User specific environment and startup programs
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+if [ -z "$DISPLAY" ]; then
+    startx
+fi
