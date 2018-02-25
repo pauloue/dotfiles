@@ -1,35 +1,37 @@
 set nocompatible
+set shell=bash
 filetype plugin indent on
 syntax on
 colorscheme base16-materia
 
-set termguicolors       " Use true colors
-set hidden              " Don't unload buffer when switched away
-set confirm             " Show dialog when command fails
-set laststatus=2        " Always show status line
-set showcmd             " Show partial commands
-set scrolloff=3         " Show 3 lines around the cursor
-set wildmenu            " Show tab completion menu
-set wildignorecase      " Ignore case when completing file names
-set wildcharm=<C-Z>     " Key to trigger expansion in mappings
-set mouse=a             " Enable mouse
-set belloff=all         " Disable beeping
-set ttimeoutlen=100     " Decrease Esc delay
-set bs=indent,eol,start " Allow backspacing over everything in insert mode
-set number              " Show line numbers
-set colorcolumn=81      " Highlight 81st column
+set termguicolors
+set hidden
+set confirm
+set laststatus=2
+set showcmd
+set scrolloff=3
+set wildmenu
+set wildignorecase
+set wildcharm=<C-Z>
+set mouse=a
+set belloff=all
+set ttimeoutlen=100
+set bs=indent,eol,start
+set number
+set colorcolumn=81
+
 " Keep swap files out of the way
 set backupdir=~/.cache//
 set directory=~/.cache//
 
-set shiftwidth=4        " Use 4 spaces for indent
-set softtabstop=-1      " Backspace deletes shiftwidth spaces
-set expandtab           " Expand tabs to spaces
-set autoindent          " Auto indent new lines
+set shiftwidth=4
+set softtabstop=-1
+set expandtab
+set autoindent
 
-set incsearch           " Show search results as you type
-set ignorecase          " Search is case insensitive
-set smartcase           " except when using capital letters
+set incsearch
+set ignorecase
+set smartcase
 
 let g:bufferline_show_bufnr = 0
 let g:bufferline_rotate = 2
@@ -85,6 +87,4 @@ if filereadable("/home/paul/.password-store/.vimrc")
 endif
 
 " Abbreviations
-ia teh the
-
 ca vb vert sb
