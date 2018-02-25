@@ -131,8 +131,8 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 
     # switch to previously focused workspace
     bindsym $mod+Tab workspace back_and_forth
-    # move container to previous workspace
-    bindsym $mod+Shift+Tab move container to workspace back_and_forth
+    # move container to previous workspace (doesn't work yet)
+    # bindsym $mod+Shift+Tab move container to workspace back_and_forth
 #
 # Layout stuff
 #
