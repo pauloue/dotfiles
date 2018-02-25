@@ -39,21 +39,21 @@ let g:bufferline_rotate = 2
 let g:vcm_direction='p'
 
 " Fly between buffers
-nnoremap <leader>b :b <C-Z><S-Tab>
+nmap <leader>b :b <C-Z><S-Tab>
 " Cycle between buffers
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>N :bp<CR>
+nmap <leader>n :bn<CR>
+nmap <leader>N :bp<CR>
 " Unload current buffer
-nnoremap <silent> <leader>d :bd<CR>
+nmap <silent> <leader>d :bd<CR>
 " Save and unload current buffer
-nnoremap <silent> <leader>D :w \| bd<CR>
+nmap <silent> <leader>D :w \| bd<CR>
 
 " Quickly edit/source vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " <C-L> (redraw screen) also clears search highlighting
-nnoremap <silent> <C-L> :nohl<CR><C-L>
+nmap <silent> <C-L> :nohl<CR><C-L>
 
 " <F2> toggles spellcheck on/off
 nmap <silent> <F2> :setlocal spell! spell?<CR>
@@ -82,7 +82,7 @@ au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.'.expand("<afile>:e") |
 au BufEnter ~/Documents/notes/* set ft=markdown
 
 " Settings for pass
-if filereadable("/home/paul/.password-store/.vimrc")
+if filereadable(expand('~/.password-store/.vimrc'))
     au BufEnter /dev/shm/pass.* source ~/.password-store/.vimrc
 endif
 
