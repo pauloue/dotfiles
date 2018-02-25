@@ -21,7 +21,7 @@ if status is-login
     set -gx PATH ~/bin ~/.local/bin $PATH
     set -gx XKB_DEFAULT_OPTIONS caps:escape
 
-    if test -z "$DISPLAY"
+    if test -z "$DISPLAY" -a $XDG_VTNR = 1
         startx
     end
 end
