@@ -2,7 +2,7 @@
 -- Author: Defman21
 -- Template by Bez Hermoso <bezalelhermoso@gmail.com>
 
-Description = "Base16 "
+Description = "Base16 Materia"
 
 Default = { Colour = "#CDD3DE" }
 Canvas = { Colour="#263238" }
