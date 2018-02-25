@@ -9,8 +9,8 @@ First install stow through your package manager.
 
 Then clone the repo, cd into it and run:
 
-    $ stow bash
     $ stow vim
+    $ stow sway
     $ stow PACKAGE(s)
 
 This will symlink all the package's configuration files into the parent
@@ -26,7 +26,7 @@ For external dependencies such as vim plugins.
 
 To add a subtree:
 
-    $ git subtree add -P <path in repo> <url> <branch> --squash
+    $ git subtree add -P <prefix> <url> <branch> --squash
 
 Now normal git commands can be used on the subtree. Commits to the subtree and
 main repo should be kept separate. To update the subtree use the same command,
