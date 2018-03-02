@@ -73,7 +73,7 @@ au FileType python setl cc=80
 au FileType html setl sw=2 spell tw=80
 au FileType css setl sw=2
 au FileType markdown setl spell tw=80
-au FileType lua setl noexpandtab sw=0
+au FileType lua setl noet ts=4
 
 " Read in template files
 au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.'.expand("<afile>:e") | norm G
