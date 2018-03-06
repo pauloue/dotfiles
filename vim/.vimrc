@@ -39,29 +39,29 @@ let g:bufferline_rotate = 2
 let g:vcm_direction='p'
 
 " Fly between buffers
-nmap <leader>b :b <C-Z><S-Tab>
+nnoremap <leader>b :b <C-Z><S-Tab>
 " Cycle between buffers
-nmap <leader>n :bn<CR>
-nmap <leader>N :bp<CR>
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>N :bp<CR>
 " Unload current buffer
-nmap <silent> <leader>d :bd<CR>
+nnoremap <silent> <leader>d :bd<CR>
 " Save and unload current buffer
-nmap <silent> <leader>D :w \| bd<CR>
+nnoremap <silent> <leader>D :w \| bd<CR>
 
 " Quickly edit/source vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " <C-L> (redraw screen) also clears search highlighting
-nmap <silent> <C-L> :nohl<CR><C-L>
+nnoremap <silent> <C-L> :noh<CR><C-L>
 
 " <F2> toggles spellcheck on/off
-nmap <silent> <F2> :setlocal spell! spell?<CR>
+nnoremap <silent> <F2> :setlocal spell! spell?<CR>
 " Replace word with first spell suggestion
-nmap <leader>s 1z=
+nnoremap <leader>s 1z=
 
 " Insert date
-nmap <leader>f "=strftime('%F')<CR>p
+nnoremap <leader>f "=strftime('%F')<CR>p
 
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
