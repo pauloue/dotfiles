@@ -1,10 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -e
 #
 # Backup home folder to $BACKUP_DIR/$DEST, keeping incremental old backups
 # Excludes files that match the exclude patterns in $BACKUP_DIR/exclude
 # 'backup restore' restores the most recent backup to the home folder
-
-set -e
 
 BACKUP_DIR="/run/media/paul/Elements/backups"
 DEST="backup-$(date +%F)"
