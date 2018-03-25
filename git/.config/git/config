@@ -15,3 +15,6 @@
     st = status
     ci = commit
     lu = ls-files -o
+
+[merge]
+    tool = vimdiff
