@@ -10,8 +10,7 @@ set confirm
 set laststatus=2
 set showcmd
 set scrolloff=3
-set wildmenu
-set wildignorecase
+set wildmenu wildignorecase
 set wildcharm=<C-Z>
 set mouse=a
 set belloff=all
@@ -62,6 +61,13 @@ nnoremap <leader>s 1z=
 
 " Insert date
 nnoremap <leader>f "=strftime('%F')<CR>p
+
+" vimdiff
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
 
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
