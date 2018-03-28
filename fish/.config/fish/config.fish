@@ -23,7 +23,7 @@ alias notes "ranger --cmd='set column_ratios 1,2' ~/Documents/notes"
 alias todo "vim ~/Documents/notes/todo ~/Documents/notes/done-list"
 
 if status is-login
-    set -gx PATH ~/bin ~/.local/bin $PATH
+    set -gx PATH ~/bin ~/.local/bin /sbin $PATH
     set -gx XKB_DEFAULT_OPTIONS caps:escape
 
     if test -z "$DISPLAY" -a $XDG_VTNR = 1
