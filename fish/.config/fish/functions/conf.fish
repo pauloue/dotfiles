@@ -3,6 +3,7 @@ function conf
     set -l git ~/.config/git/config
     set -l i3 ~/.config/i3/config
     set -l sway ~/.config/sway/config
+    set -l tmux ~/.tmux.conf
 
     if test "$argv"
         vim $$argv
