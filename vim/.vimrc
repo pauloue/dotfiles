@@ -19,10 +19,6 @@ set bs=indent,eol,start
 set number
 set colorcolumn=81
 
-" Keep swap files out of the way
-set backupdir=~/.cache//
-set directory=~/.cache//
-
 set shiftwidth=4
 set softtabstop=-1
 set expandtab
@@ -34,7 +30,6 @@ set smartcase
 
 let g:bufferline_show_bufnr = 0
 let g:bufferline_rotate = 2
-
 let g:vcm_direction='p'
 
 " Fly between buffers
@@ -44,8 +39,6 @@ nnoremap <leader>n :bn<CR>
 nnoremap <leader>N :bp<CR>
 " Unload current buffer
 nnoremap <silent> <leader>d :bd<CR>
-" Save and unload current buffer
-nnoremap <silent> <leader>D :w \| bd<CR>
 
 " Quickly edit/source vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
