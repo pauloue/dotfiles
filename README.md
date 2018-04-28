@@ -19,15 +19,3 @@ uninstall the configuration files for a package.
 
 See [this post](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
 for more info.
-
-## Git subtree
-
-For external dependencies such as vim plugins.
-
-To add a subtree:
-
-    $ git subtree add -P <prefix> <url> <branch> --squash
-
-Now normal git commands can be used on the subtree. Commits to the subtree and
-main repo should be kept separate. To update the subtree use the same command,
-replacing 'add' with 'pull'.
