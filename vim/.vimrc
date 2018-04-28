@@ -17,6 +17,7 @@ set belloff=all
 set ttimeoutlen=100
 set bs=indent,eol,start
 set number
+set relativenumber
 set colorcolumn=81
 
 set shiftwidth=4
@@ -50,7 +51,7 @@ nnoremap <silent> <C-L> :noh<CR><C-L>
 " <F2> toggles spellcheck on/off
 nnoremap <silent> <F2> :setlocal spell! spell?<CR>
 " Replace word with first spell suggestion
-nnoremap <leader>s 1z=
+nnoremap <leader>s z=1<CR><CR>
 
 " Insert date
 nnoremap <leader>f "=strftime('%F')<CR>p
