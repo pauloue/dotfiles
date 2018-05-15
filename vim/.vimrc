@@ -29,6 +29,7 @@ set incsearch
 set ignorecase
 set smartcase
 
+let g:tex_flavor = "latex"
 let g:bufferline_show_bufnr = 0
 let g:bufferline_rotate = 2
 let g:vcm_direction='p'
