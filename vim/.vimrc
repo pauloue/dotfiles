@@ -68,7 +68,8 @@ endif
 au VimResized * wincmd =
 
 " General file type settings
-au FileType text setl tw=80
+au FileType text setl spell tw=80
+au FileType tex setl spell tw=80
 au FileType gitcommit setl spell
 au FileType python setl cc=80
 au FileType html setl sw=2 spell tw=80
