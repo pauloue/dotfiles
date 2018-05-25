@@ -19,7 +19,7 @@ alias dnfr "sudo dnf remove"
 
 alias diff "diff --color=auto"
 alias notes "ranger --cmd='set column_ratios 1,2' ~/Documents/notes"
-alias todo "vim ~/Documents/notes/todo"
+alias todo "ranger --cmd='set column_ratios 1,2' ~/Documents/todo"
 
 if status is-login
     set -gx PATH ~/bin ~/.local/bin /sbin $PATH
