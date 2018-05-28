@@ -18,8 +18,8 @@ alias dnfi "sudo dnf install"
 alias dnfr "sudo dnf remove"
 
 alias diff "diff --color=auto"
-alias notes "ranger --cmd='set column_ratios 1,2' ~/Documents/notes"
-alias todo "ranger --cmd='set column_ratios 1,2' ~/Documents/todo"
+alias notes "ranger ~/Documents/notes"
+alias todo "ranger ~/Documents/todo"
 
 if status is-login
     set -gx PATH ~/bin ~/.local/bin /sbin $PATH
