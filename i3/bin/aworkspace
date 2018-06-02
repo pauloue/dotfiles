@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# https://git.sr.ht/~sircmpwn/dotfiles/tree/bin/aworkspace
+
+set -e
+ws=$(i3-msg -t get_workspaces | jq -r .[].name | dmenu -i -p "Workspace:")
+
+if [ "$1" = "switch" ]
+then
+    i3-msg "workspace $ws"
+else
+    i3-msg "move container to workspace $ws"
+fi
