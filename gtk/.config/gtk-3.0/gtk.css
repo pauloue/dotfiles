@@ -1,4 +1,4 @@
-/* Remove GTK3 titlebars without CSD buttons */
+/* Remove GTK3 titlebars without CSD buttons in sway */
 .titlebar.default-decoration {
   margin: -200px;
   opacity: 0;
