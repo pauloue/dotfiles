@@ -1,17 +1,14 @@
 #!/bin/sh
 
-# run all system xinitrc scripts
+# Run all system xinitrc scripts
 for file in /etc/X11/xinit/xinitrc.d/*; do
     . $file
 done
 
 DEVICE="ETPS/2 Elantech Touchpad"
-# enable tapping
-xinput set-prop "$DEVICE" 277 1
-# enable natural scrolling
-xinput set-prop "$DEVICE" 285 1
-# disable DWT
-xinput set-prop "$DEVICE" 287 0
+xinput set-prop "$DEVICE" "libinput Tapping Enabled" 1
+xinput set-prop "$DEVICE" "libinput Natural Scrolling Enabled" 1
+xinput set-prop "$DEVICE" "libinput Disable While Typing Enabled" 0
 
 setxkbmap -option caps:escape
 
