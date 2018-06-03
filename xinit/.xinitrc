@@ -11,7 +11,7 @@ xinput set-prop "$DEVICE" 277 1
 # enable natural scrolling
 xinput set-prop "$DEVICE" 285 1
 # disable DWT
-xinput set-prop "$DEVICE" 299 0
+xinput set-prop "$DEVICE" 287 0
 
 setxkbmap -option caps:escape
 
