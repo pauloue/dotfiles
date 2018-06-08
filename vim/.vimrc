@@ -16,8 +16,7 @@ set mouse=a
 set belloff=all
 set ttimeoutlen=100
 set bs=indent,eol,start
-set number
-set relativenumber
+set number relativenumber
 set colorcolumn=81
 
 set shiftwidth=4
@@ -26,8 +25,7 @@ set expandtab
 set autoindent
 
 set incsearch
-set ignorecase
-set smartcase
+set ignorecase smartcase
 
 let g:tex_flavor = "latex"
 let g:bufferline_show_bufnr = 0
@@ -78,15 +76,13 @@ au FileType markdown setl spell tw=80
 au FileType lua setl noet ts=4
 
 " Read in template files
-au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.'.expand("<afile>:e") | norm G
+au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.' . expand("<afile>:e")
 
 " Use markdown for notes
 au BufEnter ~/Documents/notes/* set ft=markdown
 
 " Settings for pass
-if filereadable(expand('~/.password-store/.vimrc'))
-    au BufEnter /dev/shm/pass.* source ~/.password-store/.vimrc
-endif
+au BufEnter /dev/shm/pass.* sil! source ~/.password-store/.vimrc
 
 " Abbreviations
 ca vb vert sb
