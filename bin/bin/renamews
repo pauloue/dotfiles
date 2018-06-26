@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+name=$(dmenu -p "Name:")
+
+if [ -n "$WAYLAND_DISPLAY" ]
+then
+    swaymsg rename workspace to "$name"
+else
+    i3-msg rename workspace to "$name"
+fi

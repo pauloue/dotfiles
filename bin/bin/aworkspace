@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# https://git.sr.ht/~sircmpwn/dotfiles/tree/bin/aworkspace
+
+set -e
+
+if [ -n "$WAYLAND_DISPLAY" ]
+then
+    msg=swaymsg
+else
+    msg=i3-msg
+fi
+
+ws=$($msg -t get_workspaces | jq -r .[].name | dmenu -i -p "Workspace:")
+
+if [ "$1" = "switch" ]
+then
+    $msg "workspace $ws"
+else
+    $msg "move container to workspace $ws"
+fi

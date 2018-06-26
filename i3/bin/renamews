@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-name=$(dmenu -p "Name:")
-i3-msg rename workspace to "$name"
