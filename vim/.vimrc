@@ -69,10 +69,11 @@ au VimResized * wincmd =
 au FileType text setl spell tw=80
 au FileType tex setl spell tw=80
 au FileType gitcommit setl spell
-au FileType python setl cc=80
+au FileType markdown setl spell tw=80
 au FileType html setl sw=2 spell tw=80
 au FileType css setl sw=2
-au FileType markdown setl spell tw=80
+au FileType yaml setl sw=2
+au FileType python setl cc=80
 au FileType lua setl noet ts=4
 
 " Read in template files
