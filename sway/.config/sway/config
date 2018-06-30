@@ -174,10 +174,10 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 # Vim-style resizing
 #
 mode "resize" {
-    bindsym Shift+comma resize shrink width 10 px or 10 ppt
-    bindsym Shift+period resize grow width 10 px or 10 ppt
-    bindsym minus resize shrink height 10 px or 10 ppt
-    bindsym Shift+equal resize grow height 10 px or 10 ppt
+    bindsym Shift+comma resize shrink width 10 ppt
+    bindsym Shift+period resize grow width 10 ppt
+    bindsym minus resize shrink height 10 ppt
+    bindsym Shift+equal resize grow height 10 ppt
 
     # return to default mode
     bindsym Return mode "default"
