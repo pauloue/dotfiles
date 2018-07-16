@@ -55,8 +55,8 @@ for_window [class="Gnome-calculator"] floating enable
     bindsym $mod+p exec passmenu -i
 
     # take a screenshot
-    bindsym --release Print exec "scrot ~/scrot_%y%m%d_%H%M%S.png"
-    bindsym --release Shift+Print exec "scrot -s ~/scrot_%y%m%d_%H%M%S.png"
+    bindsym --release Print exec gnome-screenshot
+    bindsym --release Shift+Print exec gnome-screenshot -i
 
     # volume controls
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
