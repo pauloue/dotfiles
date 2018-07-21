@@ -8,7 +8,7 @@ set -e
 
 BACKUP_DIR="/run/media/paul/Elements/backups"
 DEST="backup-$(date +%F)"
-RSYNC_OPTS=("-azh" "--del" "--info=progress2,stats")
+RSYNC_OPTS=("-azh" "--del" "--delete-excluded" "--info=progress2,stats")
 
 case $1 in
     "" ) action="backup" ;;
