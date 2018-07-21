@@ -25,7 +25,7 @@ if status is-login
     set -gx PATH ~/bin ~/.local/bin /sbin $PATH
     set -gx XKB_DEFAULT_OPTIONS caps:escape
 
-    if test -z "$DISPLAY" -a $XDG_VTNR = 1
-        startx
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$TERM" != screen
+        sway
     end
 end
