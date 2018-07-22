@@ -79,11 +79,10 @@ au FileType lua setl noet ts=4
 " Read in template files
 au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.' . expand("<afile>:e")
 
-" Use markdown for notes
-au BufEnter ~/Documents/notes/* set ft=markdown
-
-" Settings for pass
 au BufEnter /dev/shm/pass.* sil! source ~/.password-store/.vimrc
+
+au BufEnter ~/Documents/notes/* set ft=markdown
+au BufEnter ~/Documents/todo/* set ft=markdown
 
 " Abbreviations
 ca vb vert sb
