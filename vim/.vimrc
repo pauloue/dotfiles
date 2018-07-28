@@ -75,14 +75,14 @@ au FileType css setl sw=2
 au FileType yaml setl sw=2
 au FileType python setl cc=80
 au FileType lua setl noet ts=4
+au FileType make setl sw=8
 
 " Read in template files
 au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.' . expand("<afile>:e")
 
 au BufEnter /dev/shm/pass.* sil! source ~/.password-store/.vimrc
 
-au BufEnter ~/Documents/notes/* set ft=markdown
-au BufEnter ~/Documents/todo/* set ft=markdown
+au BufEnter ~/Documents/notes/*,~/Documents/todo/* set ft=markdown
 
 " Abbreviations
 ca vb vert sb

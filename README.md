@@ -1,4 +1,4 @@
-# Dotfiles
+# dotfiles
 
 My configuration files, managed with
 [GNU Stow](https://www.gnu.org/software/stow/).
@@ -9,7 +9,7 @@ First install stow through your package manager.
 
 Then clone the repo, cd into it and run:
 
-    $ stow vim sway fish PACKAGE...
+    stow vim sway fish PACKAGE...
 
 This will symlink the packages' configuration files into the parent directory.
 Use `-t` to specify a different target directory and `-D` to uninstall the
