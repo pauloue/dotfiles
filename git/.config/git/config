@@ -2,14 +2,9 @@
     name = Paul Ouellette
     email = oue.paul18@gmail.com
 
-[credential "https://github.com"]
-    username = pauloue
-
-[credential "https://gitlab.com"]
-    username = pauloue
-
 [credential]
-    helper = cache
+    username = pauloue
+    helper = cache --timeout 3600
 
 [alias]
     st = status
