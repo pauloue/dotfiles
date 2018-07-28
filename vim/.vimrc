@@ -18,6 +18,7 @@ set ttimeoutlen=100
 set bs=indent,eol,start
 set number relativenumber
 set colorcolumn=81
+set spell
 
 set shiftwidth=4
 set softtabstop=-1
@@ -66,11 +67,10 @@ endif
 au VimResized * wincmd =
 
 " General file type settings
-au FileType text setl spell tw=80
-au FileType tex setl spell tw=80
-au FileType gitcommit setl spell
-au FileType markdown setl spell tw=80
-au FileType html setl sw=2 spell tw=80
+au FileType text setl tw=80
+au FileType tex setl tw=80
+au FileType markdown setl tw=80
+au FileType html setl sw=2 tw=80
 au FileType css setl sw=2
 au FileType yaml setl sw=2
 au FileType python setl cc=80
