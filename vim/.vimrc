@@ -8,6 +8,7 @@ set termguicolors
 set hidden
 set confirm
 set laststatus=2
+set cmdheight=2
 set showcmd
 set scrolloff=3
 set wildmenu wildignorecase
@@ -15,9 +16,14 @@ set wildcharm=<C-Z>
 set mouse=a
 set belloff=all
 set ttimeoutlen=100
-set bs=indent,eol,start
+set backspace=indent,eol,start
 set number relativenumber
+set textwidth=80
 set colorcolumn=81
+set formatoptions-=t
+set formatoptions+=j
+set incsearch
+set ignorecase smartcase
 set spell
 
 set shiftwidth=4
@@ -25,13 +31,10 @@ set softtabstop=-1
 set expandtab
 set autoindent
 
-set incsearch
-set ignorecase smartcase
-
-let g:tex_flavor = "latex"
+let g:tex_flavor = 'latex'
 let g:bufferline_show_bufnr = 0
 let g:bufferline_rotate = 2
-let g:vcm_direction='p'
+let g:vcm_direction = 'p'
 
 " Fly between buffers
 nnoremap <leader>b :b <C-Z><S-Tab>
@@ -41,9 +44,8 @@ nnoremap <C-J> :bp<CR>
 " Unload current buffer
 nnoremap <silent> <leader>d :bd<CR>
 
-" Quickly edit/source vimrc
+" Edit vimrc
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
-nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " <C-L> (redraw screen) also clears search highlighting
 nnoremap <silent> <C-L> :noh<CR><C-L>
@@ -63,25 +65,22 @@ if &diff
     map <leader>3 :diffget REMOTE<CR>
 endif
 
-" Automatically resize split windows when Vim is resized
-au VimResized * wincmd =
-
 " General file type settings
-au FileType text setl tw=80
-au FileType tex setl tw=80
-au FileType markdown setl tw=80
-au FileType html setl sw=2 tw=80
+au FileType text,tex setl fo+=t
+au FileType html setl sw=2 fo+=t
 au FileType css setl sw=2
 au FileType yaml setl sw=2
-au FileType python setl cc=80
+au FileType python setl tw=79 cc=80
 au FileType lua setl noet ts=4
 au FileType make setl sw=8
 
 " Read in template files
 au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.' . expand("<afile>:e")
 
-au BufEnter /dev/shm/pass.* sil! source ~/.password-store/.vimrc
+" Automatically resize split windows when Vim is resized
+au VimResized * wincmd =
 
+au BufEnter /dev/shm/pass.* sil! source ~/.password-store/.vimrc
 au BufEnter ~/Documents/notes/*,~/Documents/todo/* set ft=markdown
 
 " Abbreviations
