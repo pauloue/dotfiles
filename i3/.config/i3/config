@@ -53,6 +53,7 @@ for_window [class="Gnome-calculator"] floating enable
 
     # passwords
     bindsym $mod+p exec passmenu -i
+    bindsym $mod+Shift+p exec pass -c School/UR-ID
 
     # take a screenshot
     bindsym --release Print exec --no-startup-id gnome-screenshot

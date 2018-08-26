@@ -65,6 +65,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 
     # passwords
     bindsym $mod+p exec passmenu -i
+    bindsym $mod+Shift+p exec pass -c School/UR-ID
 
     # take a screenshot
     bindsym Print exec swaygrab
