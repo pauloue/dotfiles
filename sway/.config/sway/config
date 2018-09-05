@@ -36,6 +36,9 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     dwt disabled
     natural_scroll enabled
 }
+input "1578:22808:MOSART_Semi._2.4G_Keyboard" {
+    middle_emulation enabled
+}
 
 ### Key bindings
 #
