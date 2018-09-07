@@ -65,7 +65,6 @@ for_window [class="Gnome-calculator"] floating enable
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
     # lock the screen
-    bindsym XF86Sleep exec i3lock -ec 323232
     bindsym $mod+0 exec i3lock -ec 323232
 
     # reload the configuration file
