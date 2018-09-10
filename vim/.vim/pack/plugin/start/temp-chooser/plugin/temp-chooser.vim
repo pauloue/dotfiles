@@ -11,7 +11,7 @@ function! TempChooser()
         return
     endif
     let name = readfile(temp)
-    exec '0r ' . fnameescape(name[0])
+    exec 'r ' . fnameescape(name[0])
     redraw!
 endfunction
 
