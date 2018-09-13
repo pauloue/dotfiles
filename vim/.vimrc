@@ -39,8 +39,8 @@ let g:vcm_direction = 'p'
 " Fly between buffers
 nnoremap <leader>b :b <C-Z><S-Tab>
 " Cycle between buffers
-nnoremap <C-K> :bn<CR>
-nnoremap <C-J> :bp<CR>
+nnoremap <C-J> :bn<CR>
+nnoremap <C-K> :bp<CR>
 " Unload current buffer
 nnoremap <silent> <leader>d :bd<CR>
 
