@@ -13,4 +13,4 @@ xinput set-prop "$DEVICE" "libinput Disable While Typing Enabled" 0
 setxkbmap -option caps:escape
 
 xsetroot -solid "#222222"
-exec gnome-session
+exec i3
