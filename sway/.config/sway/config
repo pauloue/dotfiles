@@ -22,7 +22,6 @@ hide_edge_borders smart
 workspace_auto_back_and_forth yes
 
 # for_window settings
-for_window [window_role="floating"] floating enable
 for_window [class="Minetest"] floating enable
 for_window [id="gnome-calculator"] floating enable
 for_window [id="gcr-prompter"] floating enable
@@ -51,7 +50,7 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard" {
     # nautilus
     bindsym $mod+F2 exec nautilus
     # ranger
-    bindsym $mod+F3 exec $term --role="floating" -- ranger
+    bindsym $mod+F3 exec $term -- ranger
     # calculator
     bindsym $mod+F4 exec gnome-calculator
 
