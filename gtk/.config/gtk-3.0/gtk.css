@@ -1,13 +1,3 @@
-/* Thinner title bars */
-.header-bar.default-decoration {
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-.header-bar.default-decoration .button.titlebutton {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
 /* Remove GTK3 titlebars without CSD buttons in sway */
 .titlebar.default-decoration {
   margin: -200px;
