@@ -20,6 +20,8 @@ set backspace=indent,eol,start
 set number relativenumber
 set textwidth=80
 set colorcolumn=81
+set foldmethod=indent
+set nofoldenable
 set formatoptions-=t
 set formatoptions+=j
 set incsearch
