@@ -29,6 +29,7 @@ wireless _first_ {
 
 volume master {
     format = "  %volume"
+    format_muted = "  0%%"
 }
 
 battery all {
