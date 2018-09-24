@@ -45,6 +45,7 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard" {
 #
     # terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec $term --working-directory src
     # firefox
     bindsym $mod+F1 exec firefox
     # nautilus
