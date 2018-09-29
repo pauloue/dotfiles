@@ -27,10 +27,10 @@ for_window [id="gnome-calculator"] floating enable
 for_window [id="gcr-prompter"] floating enable
 
 # Wallpaper
-output * bg $HOME/Pictures/backgrounds/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /usr/share/backgrounds/f28/default/tv-wide/f28.png fill
 
 # Input configuration
-input "2:14:ETPS/2_Elantech_Touchpad" {
+input "1739:0:Synaptics_TM3072-0" {
     tap enabled
     dwt disabled
     natural_scroll enabled
