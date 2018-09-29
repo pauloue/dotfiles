@@ -7,8 +7,6 @@ function fish_prompt
 end
 
 function fish_user_key_bindings
-    bind \ef nextd-or-forward-word
-    bind \eb prevd-or-backward-word
     bind \er "ranger; fish_prompt"
 end
 
@@ -22,7 +20,7 @@ alias notes "ranger ~/Documents/notes"
 alias todo "ranger ~/Documents/todo"
 
 if status is-login
-    set -gx PATH ~/bin ~/.local/bin /sbin $PATH
+    set -gx PATH ~/bin ~/.local/bin /usr/sbin $PATH
     set -gx XKB_DEFAULT_OPTIONS caps:escape
 
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$TERM" != screen
