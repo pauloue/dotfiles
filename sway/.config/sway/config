@@ -35,7 +35,7 @@ input "1739:0:Synaptics_TM3072-0" {
     dwt disabled
     natural_scroll enabled
 }
-input "1578:22808:MOSART_Semi._2.4G_Keyboard" {
+input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     middle_emulation enabled
 }
 
