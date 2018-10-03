@@ -51,7 +51,7 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     # nautilus
     bindsym $mod+F2 exec nautilus
     # ranger
-    bindsym $mod+F3 exec $term -- ranger
+    bindsym $mod+F3 exec $term -t Ranger -- ranger
     # calculator
     bindsym $mod+F4 exec gnome-calculator
 
