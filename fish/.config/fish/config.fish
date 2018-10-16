@@ -20,7 +20,7 @@ alias diff "diff --color=auto"
 alias notes "ranger ~/Documents/notes"
 alias todo "ranger ~/Documents/todo"
 
-if status is-login
+if status is-login; and test -z "$ANDROID_DATA"
     set -gx PATH ~/bin ~/.local/bin /usr/sbin $PATH
     set -gx XKB_DEFAULT_OPTIONS caps:escape
 
