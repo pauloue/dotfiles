@@ -16,8 +16,6 @@ font pango:monospace 9
 
 # Hide title bars
 new_window pixel
-# Hide window borders if workspace has one window
-hide_edge_borders smart
 # Repeating a workspace switch command switches back to prior workspace
 workspace_auto_back_and_forth yes
 
@@ -31,7 +29,6 @@ for_window [class="Gnome-calculator"] floating enable
 #
     # terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $term --working-directory src
     # firefox
     bindsym $mod+F1 exec firefox
     # nautilus
@@ -53,7 +50,6 @@ for_window [class="Gnome-calculator"] floating enable
 
     # passwords
     bindsym $mod+p exec passmenu -i
-    bindsym $mod+Shift+p exec pass -c School/UR-ID
 
     # take a screenshot
     bindsym --release Print exec --no-startup-id gnome-screenshot

@@ -10,6 +10,7 @@ function fish_user_key_bindings
     bind \er "ranger; fish_prompt"
 end
 
+alias v "$EDITOR"
 alias dnfs "dnf search"
 alias dnfu "sudo dnf upgrade"
 alias dnfi "sudo dnf install"

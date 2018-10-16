@@ -16,8 +16,6 @@ font pango:monospace 9
 
 # Hide title bars
 default_border pixel
-# Hide window borders if workspace has one window
-hide_edge_borders smart
 # Repeating a workspace switch command switches back to prior workspace
 workspace_auto_back_and_forth yes
 
@@ -45,7 +43,6 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
 #
     # terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $term --working-directory src
     # firefox
     bindsym $mod+F1 exec firefox
     # nautilus
@@ -68,7 +65,6 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
 
     # passwords
     bindsym $mod+p exec passmenu -i
-    bindsym $mod+Shift+p exec pass -c School/UR-ID
 
     # take a screenshot
     bindsym Print exec swaygrab
