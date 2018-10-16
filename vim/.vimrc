@@ -7,6 +7,7 @@ colorscheme base16-materia
 set termguicolors
 set hidden
 set confirm
+set title
 set laststatus=2
 set cmdheight=2
 set showcmd
@@ -34,8 +35,6 @@ set expandtab
 set autoindent
 
 let g:tex_flavor = 'latex'
-let g:bufferline_show_bufnr = 0
-let g:bufferline_rotate = 2
 let g:vcm_direction = 'p'
 
 " Fly between buffers
@@ -62,9 +61,9 @@ nnoremap <leader>f "=strftime('%F')<CR>p
 
 " vimdiff
 if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
+  map <leader>1 :diffget LOCAL<CR>
+  map <leader>2 :diffget BASE<CR>
+  map <leader>3 :diffget REMOTE<CR>
 endif
 
 " General file type settings
@@ -75,6 +74,8 @@ au FileType yaml setl sw=2
 au FileType python setl tw=79 cc=80
 au FileType lua setl noet ts=4
 au FileType make setl sw=8
+au FileType java setl tw=100 cc=101
+au FileType vim setl sw=2
 
 " Read in template files
 au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.' . expand("<afile>:e")
