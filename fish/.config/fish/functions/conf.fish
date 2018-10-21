@@ -4,6 +4,7 @@ function conf
     set -l i3 ~/.config/i3/config
     set -l sway ~/.config/sway/config
     set -l tmux ~/.tmux.conf
+    set -l vim ~/.vimrc
 
     if test "$argv"
         vim $$argv

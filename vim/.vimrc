@@ -37,27 +37,14 @@ set autoindent
 let g:tex_flavor = 'latex'
 let g:vcm_direction = 'p'
 
-" Fly between buffers
+" Switch buffers
 nnoremap <leader>b :b <C-Z><S-Tab>
-" Cycle between buffers
-nnoremap <C-J> :bn<CR>
-nnoremap <C-K> :bp<CR>
-" Unload current buffer
-nnoremap <silent> <leader>d :bd<CR>
-
-" Edit vimrc
-nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
 " <C-L> (redraw screen) also clears search highlighting
 nnoremap <silent> <C-L> :noh<CR><C-L>
 
-" <F2> toggles spellcheck on/off
-nnoremap <silent> <F2> :setlocal spell! spell?<CR>
 " Replace word with first spell suggestion
 nnoremap <leader>z 1z=
-
-" Insert date
-nnoremap <leader>f "=strftime('%F')<CR>p
 
 " vimdiff
 if &diff
@@ -83,8 +70,4 @@ au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.' . expand("<afile>:e")
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
 
-au BufEnter /dev/shm/pass.* sil! source ~/.password-store/.vimrc
-au BufEnter ~/Documents/notes/*,~/Documents/todo/* set ft=markdown
-
-" Abbreviations
 ca vb vert sb
