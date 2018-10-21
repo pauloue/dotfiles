@@ -52,7 +52,7 @@ for_window [class="Gnome-calculator"] floating enable
     bindsym $mod+p exec passmenu -i
 
     # take a screenshot
-    bindsym --release Print exec --no-startup-id gnome-screenshot
+    bindsym --release Ctrl+Print exec --no-startup-id gnome-screenshot
     bindsym --release Shift+Print exec --no-startup-id gnome-screenshot -i
 
     # volume controls

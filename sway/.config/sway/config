@@ -67,7 +67,7 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     bindsym $mod+p exec passmenu -i
 
     # take a screenshot
-    bindsym Print exec swaygrab
+    bindsym Ctrl+Print exec swaygrab
     bindsym Shift+Print exec swaygrab -f
 
     # volume controls
