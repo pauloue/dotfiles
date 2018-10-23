@@ -13,7 +13,6 @@ set cmdheight=2
 set showcmd
 set scrolloff=3
 set wildmenu wildignorecase
-set wildcharm=<C-Z>
 set mouse=a
 set belloff=all
 set ttimeoutlen=100
@@ -36,9 +35,6 @@ set autoindent
 
 let g:tex_flavor = 'latex'
 let g:vcm_direction = 'p'
-
-" Switch buffers
-nnoremap <leader>b :b <C-Z><S-Tab>
 
 " <C-L> (redraw screen) also clears search highlighting
 nnoremap <silent> <C-L> :noh<CR><C-L>
