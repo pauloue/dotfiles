@@ -60,9 +60,6 @@ au FileType make setl sw=8
 au FileType java setl tw=100 cc=101
 au FileType vim setl sw=2
 
-" Read in template files
-au BufNewFile *.* sil! exe '0r ~/.vim/templates/skeleton.' . expand("<afile>:e")
-
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
 

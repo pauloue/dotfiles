@@ -5,7 +5,7 @@
 
 function! TempChooser()
   let temp = tempname()
-  exec 'silent !ranger --cmd="set column_ratios 1,2" ~/.vim/templates --choosefile=' . shellescape(temp)
+  exec 'silent !ranger --cmd="set column_ratios 1,2" ~/Documents/templates --choosefile=' . shellescape(temp)
   if !filereadable(temp)
     redraw!
     return
