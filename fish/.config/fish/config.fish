@@ -18,7 +18,7 @@ alias dnfr "sudo dnf remove"
 
 alias diff "diff --color=auto"
 alias notes "ranger ~/Documents/notes"
-alias todo "ranger ~/Documents/todo"
+alias todo "vim ~/Documents/notes/todo.md"
 
 if status is-login; and test -z "$ANDROID_DATA"
     set -gx PATH ~/bin ~/.local/bin /usr/sbin $PATH

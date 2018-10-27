@@ -50,10 +50,13 @@ if &diff
 endif
 
 " General file type settings
-au FileType text,tex setl fo+=t
+au FileType text setl fo+=t
+au FileType tex setl fo+=t
 au FileType html setl sw=2 fo+=t
 au FileType css setl sw=2
 au FileType yaml setl sw=2
+au FileType c setl noet ts=4
+au FileType cpp setl noet ts=4
 au FileType python setl tw=79 cc=80
 au FileType lua setl noet ts=4
 au FileType make setl sw=8
