@@ -1,4 +1,4 @@
-" Use F8 to compile, F9 to make, F10 to lint, and F5 to run files
+" Use F8 to compile, F9 to make, F10 to lint, and F5 to run
 
 let s:commands = {
 \ 'tex': {
@@ -15,6 +15,10 @@ let s:commands = {
 \ 'lua': {
 \   'lint': 'luacheck %',
 \   'run': 'lua %',
+\ },
+\ 'c': {
+\   'compile': 'gcc -Wall -o %:r %',
+\   'run': './%:r',
 \ },
 \ 'java': {
 \   'compile': 'javac %',

@@ -27,6 +27,7 @@ set formatoptions+=j
 set incsearch
 set ignorecase smartcase
 set spell
+set cinoptions+=:0
 
 set shiftwidth=4
 set softtabstop=-1
@@ -35,6 +36,8 @@ set autoindent
 
 let g:tex_flavor = 'latex'
 let g:vcm_direction = 'p'
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 " <C-L> (redraw screen) also clears search highlighting
 nnoremap <silent> <C-L> :noh<CR><C-L>
