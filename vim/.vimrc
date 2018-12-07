@@ -36,6 +36,7 @@ set autoindent
 
 let g:tex_flavor = 'latex'
 let g:vcm_direction = 'p'
+let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
@@ -53,6 +54,9 @@ if &diff
 endif
 
 " General file type settings
+if &ft == ""
+  setl fo+=t
+endif
 au FileType text setl fo+=t
 au FileType tex setl fo+=t
 au FileType html setl sw=2 fo+=t
@@ -62,6 +66,7 @@ au FileType c setl noet ts=4
 au FileType cpp setl noet ts=4
 au FileType python setl tw=79 cc=80
 au FileType lua setl noet ts=4
+au BufEnter .luacheckrc setl noet ts=4
 au FileType make setl sw=8
 au FileType java setl tw=100 cc=101
 au FileType vim setl sw=2

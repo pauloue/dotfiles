@@ -10,7 +10,6 @@ function fish_user_key_bindings
     bind \er "ranger; fish_prompt"
 end
 
-alias v "$EDITOR"
 alias dnfs "dnf search"
 alias dnfu "sudo dnf upgrade"
 alias dnfi "sudo dnf install"
@@ -20,11 +19,11 @@ alias diff "diff --color=auto"
 alias notes "ranger ~/Documents/notes"
 alias todo "vim ~/Documents/notes/todo.md"
 
-if status is-login; and test -z "$ANDROID_DATA"
+if status is-login
     set -gx PATH ~/bin ~/.local/bin /usr/sbin $PATH
     set -gx XKB_DEFAULT_OPTIONS caps:escape
 
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1 -a "$TERM" != screen
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         sway
     end
 end
