@@ -54,9 +54,6 @@ if &diff
 endif
 
 " General file type settings
-if &ft == ""
-  setl fo+=t
-endif
 au FileType text setl fo+=t
 au FileType tex setl fo+=t
 au FileType html setl sw=2 fo+=t
