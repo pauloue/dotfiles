@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# https://git.sr.ht/~sircmpwn/dotfiles/tree/bin/aworkspace
+# https://git.sr.ht/~sircmpwn/dotfiles/tree/master/bin/aworkspace
 
 set -e
 

@@ -22,6 +22,7 @@ set textwidth=80
 set colorcolumn=81
 set foldmethod=indent
 set nofoldenable
+set conceallevel=2
 set formatoptions-=t
 set formatoptions+=j
 set incsearch
