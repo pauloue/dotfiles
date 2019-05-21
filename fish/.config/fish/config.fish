@@ -16,12 +16,13 @@ alias dnfi "sudo dnf install"
 alias dnfr "sudo dnf remove"
 
 alias diff "diff --color=auto"
+alias vim vimx
 alias notes "ranger ~/Documents/notes"
 alias todo "vim ~/Documents/notes/todo.md"
 
 if status is-login
-    set -gx PATH ~/bin ~/.local/bin /usr/sbin $PATH
-    set -gx XKB_DEFAULT_OPTIONS caps:escape
+    set -gx PATH ~/.luarocks/bin ~/bin ~/.local/bin /usr/sbin $PATH
+    eval (luarocks path)
 
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         sway

@@ -63,11 +63,13 @@ au FileType yaml setl sw=2
 au FileType c setl noet ts=4
 au FileType cpp setl noet ts=4
 au FileType python setl tw=79 cc=80
-au FileType lua setl noet ts=4
+au FileType lua setl sw=3
 au BufEnter .luacheckrc setl noet ts=4
 au FileType make setl sw=8
 au FileType java setl tw=100 cc=101
 au FileType vim setl sw=2
+
+au BufEnter ~/src/minetest/*.lua setl noet ts=4 sw=4
 
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
