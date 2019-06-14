@@ -184,10 +184,10 @@ exec swayidle timeout 300 'swaymsg "output * dpms off"' \
 # Vim-style resizing
 #
 mode "resize" {
-    bindsym Shift+comma resize shrink width 10 ppt
-    bindsym Shift+period resize grow width 10 ppt
-    bindsym minus resize shrink height 10 ppt
-    bindsym Shift+equal resize grow height 10 ppt
+    bindsym Shift+comma resize shrink width 10
+    bindsym Shift+period resize grow width 10
+    bindsym minus resize shrink height 10
+    bindsym Shift+equal resize grow height 10
 
     # return to default mode
     bindsym Return mode "default"
