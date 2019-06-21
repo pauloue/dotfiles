@@ -6,7 +6,7 @@ function conf
     set -l vim ~/.vimrc
 
     if test "$argv"
-        vim $$argv
+        $EDITOR $$argv
     else
         ranger --cmd='set hidden_filter ^\.git(ignore)?$' ~/src/dotfiles
     end
