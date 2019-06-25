@@ -13,5 +13,8 @@
     b = branch
     co = checkout
 
-[merge]
+[diff]
     tool = vimdiff
+
+[difftool]
+    prompt = false
