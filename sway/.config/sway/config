@@ -77,8 +77,8 @@ exec swayidle timeout 300 'swaymsg "output * dpms off"' \
     bindsym $mod+p exec passmenu -i
 
     # take a screenshot
-    #bindsym Ctrl+Print exec swaygrab
-    #bindsym Shift+Print exec swaygrab -f
+    bindsym Ctrl+Print exec grim $(date +'%Y-%m-%d-%H%M%S_grim.png')
+    bindsym Shift+Print exec grim -g "$(focused_rect)" $(date +'%Y-%m-%d-%H%M%S_grim.png')
 
     # volume controls
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
