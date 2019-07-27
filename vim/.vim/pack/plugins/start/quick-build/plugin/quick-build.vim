@@ -6,7 +6,13 @@ let s:commands = {
 \ },
 \ 'sh': {
 \   'lint': 'shellcheck %',
-\   'run': './%',
+\   'run': 'sh %',
+\ },
+\ 'fish': {
+\   'run': 'fish %',
+\ },
+\ 'zsh': {
+\   'run': 'zsh %',
 \ },
 \ 'python': {
 \   'lint': 'pycodestyle %',
