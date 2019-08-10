@@ -14,7 +14,6 @@ set showcmd
 set scrolloff=3
 set wildmenu wildignorecase
 set mouse=a
-set clipboard=unnamedplus
 set belloff=all
 set ttimeoutlen=100
 set backspace=indent,eol,start
@@ -41,6 +40,11 @@ let g:vcm_direction = 'p'
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
+
+" Yank/put to/from system clipboard
+noremap <leader>y "+y
+noremap <leader>p "+p
+noremap <leader>P "+P
 
 " <C-L> (redraw screen) also clears search highlighting
 nnoremap <silent> <C-L> :noh<CR><C-L>

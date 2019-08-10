@@ -1,6 +1,6 @@
 set fish_greeting
 
-set -gx EDITOR vim
+set -gx EDITOR vimx
 
 function fish_prompt
     printf '%s' (prompt_pwd) ' > '
