@@ -26,6 +26,10 @@ let s:commands = {
 \   'compile': 'gcc -Wall -o %:r %',
 \   'run': './%:r',
 \ },
+\ 'cpp': {
+\   'compile': 'g++ -Wall -o %:r %',
+\   'run': './%:r',
+\ },
 \ 'java': {
 \   'compile': 'javac %',
 \   'run': 'java %:r',

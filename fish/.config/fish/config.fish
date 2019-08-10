@@ -21,7 +21,7 @@ alias notes "ranger ~/Documents/notes"
 alias todo "vim ~/Documents/notes/todo.md"
 
 if status is-login
-    set -gx PATH ~/bin ~/.cargo/bin ~/.local/bin /usr/sbin $PATH
+    set -x PATH ~/bin ~/.cargo/bin ~/.local/bin /usr/sbin $PATH
     eval ($HOME/.luarocks/bin/luarocks path)
 
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1

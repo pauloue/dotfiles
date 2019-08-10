@@ -14,6 +14,7 @@ set showcmd
 set scrolloff=3
 set wildmenu wildignorecase
 set mouse=a
+set clipboard=unnamedplus
 set belloff=all
 set ttimeoutlen=100
 set backspace=indent,eol,start
