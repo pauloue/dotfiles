@@ -47,9 +47,11 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
 }
 
 # Idle configuration
-exec swayidle timeout 300 'swaymsg "output * dpms off"' \
+exec swayidle -w \
+    timeout 300 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -c 323232'
+    timeout 360 'systemctl suspend' \
+    before-sleep 'swaylock -f -c 323232'
 
 ### Key bindings
 #
