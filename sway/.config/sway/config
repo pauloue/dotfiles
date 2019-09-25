@@ -49,6 +49,8 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
 
 # Idle configuration
 exec swayidle -w \
+    timeout 285 'brightnessctl s 25%-' \
+    resume 'brightnessctl s +25%' \
     timeout 300 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f -c 323232'
