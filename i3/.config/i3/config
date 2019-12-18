@@ -1,0 +1,188 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# Logo key
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Terminal
+set $term gnome-terminal
+
+font pango:monospace 9
+
+# Hide title bars
+new_window pixel
+# Repeating a workspace switch command switches back to prior workspace
+workspace_auto_back_and_forth yes
+
+# for_window settings
+for_window [class="Minetest"] floating enable
+for_window [class="Gnome-calculator"] floating enable
+
+### Key bindings
+#
+# Basics
+#
+    # terminal
+    bindsym $mod+Return exec $term
+    # firefox
+    bindsym $mod+F1 exec firefox
+    # nautilus
+    bindsym $mod+F2 exec nautilus
+    # ranger
+    bindsym $mod+F3 exec $term -t Ranger -- ranger
+    # calculator
+    bindsym $mod+F4 exec gnome-calculator
+
+    # kill focused window
+    bindsym $mod+Shift+q kill
+
+    # dmenu
+    bindsym $mod+d exec dmenu_run -i
+    bindsym $mod+Shift+d exec i3-dmenu-desktop
+
+    # Use Mouse+$mod to drag floating windows
+    floating_modifier $mod
+
+    # passwords
+    bindsym $mod+p exec passmenu -i
+
+    # take a screenshot
+    bindsym --release Ctrl+Print exec --no-startup-id gnome-screenshot
+    bindsym --release Shift+Print exec --no-startup-id gnome-screenshot -i
+
+    # volume controls
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+    # lock the screen
+    bindsym $mod+0 exec i3lock -ec 323232
+
+    # reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # restart i3 inplace
+    bindsym $mod+Shift+r restart
+
+    # exit i3 (logs you out of your X session)
+    bindsym $mod+Shift+e exec i3-msg exit
+#
+# Moving around
+#
+    # Move focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # or use $mod+arrow keys
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces
+#
+    # switch to workspace
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace 2
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
+    bindsym $mod+6 workspace 6
+    bindsym $mod+7 workspace 7
+    bindsym $mod+8 workspace 8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+Tab exec aworkspace switch
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5
+    bindsym $mod+Shift+6 move container to workspace 6
+    bindsym $mod+Shift+7 move container to workspace 7
+    bindsym $mod+Shift+8 move container to workspace 8
+    bindsym $mod+Shift+9 move container to workspace 9
+    bindsym $mod+Shift+Tab exec aworkspace move
+
+    # switch to next/prev workspace
+    bindsym $mod+n workspace next
+    bindsym $mod+Shift+n workspace prev
+
+    # rename workspace
+    bindsym $mod+r exec renamews
+#
+# Layout stuff
+#
+    # vim-style window splits
+    bindsym $mod+s split v
+    bindsym $mod+v split h
+
+    # change layouts with $mod+,./
+    bindsym $mod+comma layout stacking
+    bindsym $mod+period layout tabbed
+    bindsym $mod+slash layout toggle split
+
+    # toggle fullscreen
+    bindsym $mod+f fullscreen toggle
+
+    # toggle between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # swap focus between tiling and floating windows
+    bindsym $mod+space focus mode_toggle
+
+    # focus the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad
+#
+    # move focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # show next scratchpad window
+    bindsym $mod+minus scratchpad show
+#
+# Vim-style resizing
+#
+mode "resize" {
+    bindsym Shift+comma resize shrink width
+    bindsym Shift+period resize grow width
+    bindsym minus resize shrink height
+    bindsym Shift+equal resize grow height
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+w mode "resize"
+
+#
+# Status Bar
+#
+bar {
+    status_command i3status
+    font pango:monospace 10
+    position top
+    separator_symbol "  "
+    colors {
+        background #323232
+        inactive_workspace #323232 #323232 #888888
+    }
+}
