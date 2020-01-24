@@ -2,7 +2,7 @@
 
 cd ~/Documents/notes
 
-if git diff-index --quiet HEAD; then
+if git diff --quiet origin/master; then
     git pull
 else
     git add .
