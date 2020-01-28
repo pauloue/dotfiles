@@ -1,2 +1,2 @@
-" Open pdf
-nnoremap <buffer> <leader>v :!gio open %:r.pdf &<CR><CR>
+" Open PDF
+nnoremap <buffer> <F5> :!gio open %:r.pdf &<CR><CR>

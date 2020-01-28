@@ -1,27 +1,6 @@
 " Use F8 to compile, F9 to make, F10 to lint, and F5 to run
 
 let s:commands = {
-\ 'tex': {
-\   'compile': 'rubber --inplace -d %',
-\ },
-\ 'sh': {
-\   'lint': 'shellcheck %',
-\   'run': 'sh %',
-\ },
-\ 'fish': {
-\   'run': 'fish %',
-\ },
-\ 'zsh': {
-\   'run': 'zsh %',
-\ },
-\ 'python': {
-\   'lint': 'pycodestyle %',
-\   'run': 'python3 %',
-\ },
-\ 'lua': {
-\   'lint': 'luacheck %',
-\   'run': 'lua %',
-\ },
 \ 'c': {
 \   'compile': 'gcc -Wall -o %:r %',
 \   'run': './%:r',
@@ -30,9 +9,33 @@ let s:commands = {
 \   'compile': 'g++ -Wall -o %:r %',
 \   'run': './%:r',
 \ },
+\ 'fish': {
+\   'run': 'fish %',
+\ },
 \ 'java': {
 \   'compile': 'javac %',
 \   'run': 'java %:r',
+\ },
+\ 'lua': {
+\   'lint': 'luacheck %',
+\   'run': 'lua %',
+\ },
+\ 'markdown': {
+\   'compile': 'pandoc -o %:r.pdf %',
+\ },
+\ 'python': {
+\   'lint': 'pycodestyle %',
+\   'run': 'python3 %',
+\ },
+\ 'sh': {
+\   'lint': 'shellcheck %',
+\   'run': 'sh %',
+\ },
+\ 'tex': {
+\   'compile': 'rubber --inplace -d %',
+\ },
+\ 'zsh': {
+\   'run': 'zsh %',
 \ },
 \}
 
