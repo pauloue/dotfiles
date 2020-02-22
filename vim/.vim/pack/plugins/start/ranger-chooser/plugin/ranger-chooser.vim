@@ -12,10 +12,10 @@ function! RangeChooser()
   endif
   let names = readfile(temp)
   " Edit first item
-  exec 'edit ' . fnameescape(names[0])
-  " Add remaning items to buffer list
+  exec 'edit ' . fnamemodify(fnameescape(names[0]), ":.")
+  " Add remaining items to buffer list
   for name in names[1:]
-    exec 'argadd ' . fnameescape(name)
+    exec 'argadd ' . fnamemodify(fnameescape(name), ":.")
   endfor
   redraw!
 endfunction
