@@ -25,6 +25,7 @@ set nofoldenable
 set conceallevel=2
 set formatoptions-=t
 set formatoptions+=j
+set nojoinspaces
 set incsearch
 set ignorecase smartcase
 set spell
