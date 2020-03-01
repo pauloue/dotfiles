@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sed -i '/^Wal=/d; s/^\(WalVPaned=\).*/\1360/' ~/.config/homebank/preferences
+/usr/bin/homebank
