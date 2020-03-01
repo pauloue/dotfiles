@@ -60,6 +60,10 @@ if &diff
   map <leader>3 :diffget REMOTE<CR>
 endif
 
+cnoremap <C-A> <Home>
+cnoremap <C-B> <Left>
+cnoremap <C-F> <Right>
+
 " General file type settings
 au FileType text setl fo+=t
 au FileType tex setl fo+=t
