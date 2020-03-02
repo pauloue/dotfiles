@@ -36,6 +36,7 @@ set softtabstop=-1
 set expandtab
 set autoindent
 
+let c_no_curly_error = 1
 let g:tex_flavor = 'latex'
 let g:vcm_direction = 'p'
 let g:vim_markdown_frontmatter = 1
