@@ -25,7 +25,6 @@ workspace_auto_back_and_forth yes
 for_window [class="Minetest"] floating enable
 for_window [app_id="gnome-calculator"] floating enable
 for_window [title="Ranger"] floating enable
-for_window [app_id="synapse"] border none
 
 # Output configuration
 output * background /usr/share/backgrounds/f29/default/tv-wide/f29.png fill
@@ -75,8 +74,6 @@ exec swayidle -w \
 
     # launcher
     bindsym $mod+d exec $menu
-    # synapse
-    bindsym $mod+y exec synapse
 
     # Use Mouse+$mod to drag floating windows
     # Resize them with right mouse button + $mod.
