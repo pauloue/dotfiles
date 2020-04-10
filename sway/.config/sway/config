@@ -65,7 +65,7 @@ exec swayidle -w \
     # nautilus
     bindsym $mod+F2 exec nautilus
     # ranger
-    bindsym $mod+F3 exec $term -t Ranger -- ranger
+    bindsym $mod+F3 exec $term -t Ranger -- rangerchooser
     # calculator
     bindsym $mod+F4 exec gnome-calculator
 
