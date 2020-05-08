@@ -84,8 +84,10 @@ exec swayidle -w \
     bindsym $mod+p exec passmenu -i
 
     # take a screenshot
-    bindsym Ctrl+Print exec grim $(date +'%Y-%m-%d-%H%M%S_grim.png')
-    bindsym Shift+Print exec grim -g "$(focused_rect)" $(date +'%Y-%m-%d-%H%M%S_grim.png')
+    bindsym $mod+Print exec grimshot save active
+    bindsym Shift+Print exec grimshot save area
+    bindsym Mod1+Print exec grimshot save output
+    bindsym Ctrl+Print exec grimshot save window
 
     # volume controls
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
