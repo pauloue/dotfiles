@@ -1,0 +1,3 @@
+#!/bin/sh
+
+Rscript -e 'summary(scan("stdin"))'
