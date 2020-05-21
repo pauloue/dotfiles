@@ -1,6 +1,7 @@
 set fish_greeting
 
-set -x EDITOR vimx
+set -gx EDITOR vimx
+set -gx GOPATH ~/.local/share/go
 
 function fish_prompt
     printf '%s' (prompt_pwd) ' > '
@@ -15,14 +16,15 @@ alias dnfu "sudo dnf upgrade"
 alias dnfi "sudo dnf install"
 alias dnfr "sudo dnf remove"
 
-alias diff "diff --color=auto"
+alias diff "diff --color"
+alias gdb "gdb -q"
 alias vim vimx
 alias notes "ranger ~/Documents/notes"
 alias todo "vim ~/Documents/notes/todo.md"
 
 if status is-login
-    set -x PATH ~/bin ~/.cargo/bin ~/.local/bin /usr/sbin $PATH
-    eval ($HOME/.luarocks/bin/luarocks path)
+    set -gx PATH ~/bin ~/.local/bin ~/.cargo/bin /usr/sbin $PATH
+    eval (~/.luarocks/bin/luarocks path)
 
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         sway
