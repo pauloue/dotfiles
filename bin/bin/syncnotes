@@ -1,12 +1,12 @@
 #!/bin/sh
 
-cd ~/Documents/notes
+cd ~/Documents/notes || exit
 
-if git diff --quiet origin/master; then
-    git pull
-else
+if [ "$(git status --porcelain)" ]; then
     git add .
     git commit -m "$(git status --porcelain)"
     git pull --rebase
     git push
+else
+    git pull
 fi
