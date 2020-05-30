@@ -73,6 +73,7 @@ au FileType css setl sw=2
 au FileType yaml setl sw=2
 au FileType c setl noet ts=4
 au FileType cpp setl noet ts=4
+au FileType go setl noet ts=4
 au FileType python setl tw=79 cc=80
 au FileType lua setl sw=3
 au BufEnter .luacheckrc setl noet ts=4
