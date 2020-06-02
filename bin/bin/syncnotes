@@ -2,9 +2,10 @@
 
 cd ~/Documents/notes || exit
 
-if [ "$(git status --porcelain)" ]; then
+gitstatus=$(git status --porcelain)
+if [ "$gitstatus" ]; then
     git add .
-    git commit -m "$(git status --porcelain)"
+    git commit -m "$gitstatus"
     git pull --rebase
     git push
 else
