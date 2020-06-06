@@ -1,6 +1,6 @@
 set fish_greeting
 
-set -gx EDITOR vimx
+set -gx EDITOR nvim
 set -gx GOPATH ~/.local/share/go
 
 function fish_prompt
@@ -18,7 +18,7 @@ alias dnfr "sudo dnf remove"
 
 alias diff "diff --color"
 alias gdb "gdb -q"
-alias vim vimx
+alias vim nvim
 alias notes "ranger ~/Documents/notes"
 alias todo "vim ~/Documents/notes/todo.md"
 
