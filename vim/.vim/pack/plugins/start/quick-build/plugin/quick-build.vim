@@ -42,7 +42,7 @@ let s:commands = {
 function! QuickBuild(action)
   if has_key(s:commands, &ft) && has_key(s:commands[&ft], a:action)
     update
-    execute '!clear;' . s:commands[&ft][a:action]
+    execute '!' . s:commands[&ft][a:action]
   else
     echo 'No ' . a:action . ' command set'
   endif
