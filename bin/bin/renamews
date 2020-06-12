@@ -1,4 +1,0 @@
-#!/bin/sh
-set -e
-name=$(echo -n "" | dmenu -p "Name:")
-swaymsg rename workspace to "$name"

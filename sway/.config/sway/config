@@ -2,7 +2,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# Logo key
+### Variables
+#
+# Logo key.
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -10,8 +12,10 @@ set $down j
 set $up k
 set $right l
 # Terminal
-set $term gnome-terminal
+set $term alacritty
 # Application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu -i | xargs swaymsg exec --
 
 font pango:monospace 9
@@ -24,14 +28,25 @@ workspace_auto_back_and_forth yes
 # Per-application settings
 for_window [class="Minetest"] floating enable
 for_window [app_id="gnome-calculator"] floating enable
-for_window [title="Ranger"] floating enable
+for_window [app_id="rangerchooser"] floating enable
 
-# Output configuration
-output * background /usr/share/backgrounds/gnome/Wood.jpg fill
+### Output configuration
+#
+output * background ~/Pictures/backgrounds/Wood.jpg fill
 output eDP-1 position 0 1080
 output HDMI-A-2 position 0 0
 
-# Input configuration
+### Idle configuration
+#
+exec swayidle -w \
+    timeout 285 'light -U 25' \
+         resume 'light -A 25' \
+    timeout 300 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 1d1f21'
+
+### Input configuration
+#
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options caps:escape,grp:alt_space_toggle
     xkb_layout us,us
@@ -46,90 +61,82 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     middle_emulation enabled
 }
 
-# Idle configuration
-exec swayidle -w \
-    timeout 285 'light -U 25' \
-    resume 'light -A 25' \
-    timeout 300 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -c 323232'
-
 ### Key bindings
 #
-# Basics
+# Basics:
 #
-    # terminal
+    # Terminal
     bindsym $mod+Return exec $term
-    # firefox
+    # Firefox
     bindsym $mod+F1 exec firefox
-    # nautilus
+    # Nautilus
     bindsym $mod+F2 exec nautilus
-    # ranger
-    bindsym $mod+F3 exec $term -t Ranger -- rangerchooser
-    # calculator
+    # File chooser
+    bindsym $mod+F3 exec $term --class rangerchooser -e rangerchooser
+    # Calculator
     bindsym $mod+F4 exec gnome-calculator
 
-    # kill focused window
+    # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # launcher
+    # Launcher
     bindsym $mod+d exec $menu
 
-    # Use Mouse+$mod to drag floating windows
+    # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
     floating_modifier $mod normal
 
-    # passwords
+    # Passwords
     bindsym $mod+p exec passmenu -i
 
-    # take a screenshot
+    # Screenshot
     bindsym $mod+Print exec grimshot save active
     bindsym Shift+Print exec grimshot save area
     bindsym Mod1+Print exec grimshot save output
     bindsym Ctrl+Print exec grimshot save window
 
-    # volume controls
+    # Volume controls
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-    # lock the screen
-    bindsym $mod+0 exec swaylock -c 323232
+    # Lock the screen
+    bindsym $mod+0 exec swaylock -c 1d1f21
 
-    # reload the configuration file
+    # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your wayland session)
-    bindsym $mod+Shift+e exit
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
-# Moving around
+# Moving around:
 #
-    # Move focus around
+    # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # or use $mod+arrow keys
+    # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
-    # move the focused window with the same, but add Shift
+    # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left 50
     bindsym $mod+Shift+$down move down 50
     bindsym $mod+Shift+$up move up 50
     bindsym $mod+Shift+$right move right 50
-    # ditto, with arrow keys
+    # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left 50
     bindsym $mod+Shift+Down move down 50
     bindsym $mod+Shift+Up move up 50
     bindsym $mod+Shift+Right move right 50
 #
-# Workspaces
+# Workspaces:
 #
-    # switch to workspace
+    # Switch to workspace
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
     bindsym $mod+3 workspace 3
@@ -140,7 +147,7 @@ exec swayidle -w \
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+Tab exec aworkspace switch
-    # move focused container to workspace
+    # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
     bindsym $mod+Shift+3 move container to workspace 3
@@ -152,48 +159,49 @@ exec swayidle -w \
     bindsym $mod+Shift+9 move container to workspace 9
     bindsym $mod+Shift+Tab exec aworkspace move
 
-    # switch to next/prev workspace
+    # Switch to next/prev workspace
     bindsym $mod+n workspace next
     bindsym $mod+Shift+n workspace prev
 
-    # move workspace to other monitor
+    # Move workspace to other monitor
     bindsym $mod+x move workspace to output up
 
-    # rename workspace
-    bindsym $mod+r exec renamews
+    # Rename workspace
+    bindsym $mod+r exec swaymsg rename workspace to $(echo -n | dmenu -p "Name:")
 #
-# Layout stuff
+# Layout stuff:
 #
-    # vim-style window splits
-    bindsym $mod+s split v
-    bindsym $mod+v split h
+    # Vim-style window splits
+    bindsym $mod+s splitv
+    bindsym $mod+v splith
 
-    # change layouts with $mod+,./
+    # Change layouts with $mod+,./
     bindsym $mod+comma layout stacking
     bindsym $mod+period layout tabbed
     bindsym $mod+slash layout toggle split
 
-    # toggle fullscreen
+    # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
-    # toggle between tiling and floating mode
+    # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
-    # swap focus between tiling and floating windows
+    # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
-    # focus the parent container
+    # Move focus to the parent container
     bindsym $mod+a focus parent
 #
-# Scratchpad
+# Scratchpad:
 #
-    # move focused window to the scratchpad
+    # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
 
-    # show next scratchpad window
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 #
-# Vim-style resizing
+# Vim-style resizing:
 #
 mode "resize" {
     bindsym Shift+comma resize shrink width 10
@@ -201,25 +209,30 @@ mode "resize" {
     bindsym minus resize shrink height 10
     bindsym Shift+equal resize grow height 10
 
-    # return to default mode
+    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+w mode "resize"
 
 #
-# Status Bar
+# Status Bar:
 #
+# Read `man 5 sway-bar` for more information about this section.
 bar {
+    position top
     status_command i3status
     font pango:monospace 10
-    position top
     separator_symbol "  "
+
     colors {
+        statusline #ffffff
         background #323232
         inactive_workspace #323232 #323232 #888888
     }
 }
 
 include /etc/sway/config.d/*
+
+# https://gitlab.freedesktop.org/xorg/xserver/-/issues/731
 exec xrdb -load ~/.Xresources
