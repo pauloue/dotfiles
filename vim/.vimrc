@@ -1,8 +1,7 @@
 set nocompatible
-set shell=bash
 filetype plugin indent on
 syntax on
-colorscheme base16-materia
+colorscheme base16-tomorrow-night
 
 set termguicolors
 set hidden
@@ -12,7 +11,7 @@ set laststatus=2
 set cmdheight=2
 set showcmd
 set scrolloff=3
-set wildmenu wildignorecase
+set wildmenu wildignorecase wildmode=longest:full,full
 set mouse=a
 set belloff=all
 set ttimeoutlen=100
@@ -56,6 +55,7 @@ nnoremap <leader>z 1z=
 
 " vimdiff
 if &diff
+  map <leader>d :diffget<CR>
   map <leader>1 :diffget LOCAL<CR>
   map <leader>2 :diffget BASE<CR>
   map <leader>3 :diffget REMOTE<CR>
@@ -65,25 +65,34 @@ cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 cnoremap <C-F> <Right>
 
+tnoremap <Esc> <C-\><C-n>
+
+ca vb vert sb
+
 " General file type settings
-au FileType text setl fo+=t
-au FileType tex setl fo+=t
-au FileType html setl sw=2 fo+=t
-au FileType css setl sw=2
-au FileType yaml setl sw=2
+au BufEnter .luacheckrc setl noet ts=4
 au FileType c setl noet ts=4
 au FileType cpp setl noet ts=4
+au FileType css setl sw=2
+au FileType gitconfig setl noet sw=8
 au FileType go setl noet ts=4
-au FileType python setl tw=79 cc=80
-au FileType lua setl sw=3
-au BufEnter .luacheckrc setl noet ts=4
-au FileType make setl sw=8
+au FileType html setl sw=2 fo+=t
 au FileType java setl tw=100 cc=101
+au FileType lua setl sw=3
+au FileType make setl sw=8
+au FileType python setl tw=79 cc=80
+au FileType tex setl fo+=t
+au FileType text setl fo+=t
 au FileType vim setl sw=2
+au FileType yaml setl sw=2
 
 au BufEnter ~/src/minetest/*.lua setl noet ts=4 sw=4
 
+if has('nvim')
+  au TermOpen * setl nospell
+else
+  au TerminalOpen * setl nospell
+endif
+
 " Automatically resize split windows when Vim is resized
 au VimResized * wincmd =
-
-ca vb vert sb

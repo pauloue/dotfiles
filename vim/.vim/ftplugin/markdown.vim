@@ -1,5 +1,5 @@
 " Open PDF
-nnoremap <buffer> <F5> :!gio open %:r.pdf &<CR><CR>
+nnoremap <buffer> <F5> :!gio open %:r.pdf<CR>
 
 " Make the current line a 1st or 2nd level heading
 nnoremap <buffer> <leader>h1 yypVr=
