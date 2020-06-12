@@ -1,23 +1,20 @@
 [user]
-    name = Paul Ouellette
-    email = oue.paul18@gmail.com
-
+	name = Paul Ouellette
+	email = oue.paul18@gmail.com
 [credential]
-    username = pauloue
-    helper = cache --timeout 3600
-
+	username = pauloue
+	helper = cache --timeout 3600
 [alias]
-    st = status
-    ci = commit
-    ca = commit -a
-    b = branch
-    co = checkout
-
+	st = status
+	ci = commit
+	ca = commit -a
+	b = branch
+	co = checkout
 [diff]
-    tool = vimdiff
-
+	tool = vim -d
 [merge]
-    tool = vimdiff
-
+	tool = vim -d
 [difftool]
-    prompt = false
+	prompt = false
+[rebase]
+	autoSquash = true
