@@ -72,7 +72,7 @@ esac
 case "$mimetype" in
     # Syntax highlight for text files:
     text/* | */xml)
-        try highlight --out-format=xterm256 "$path" -s base16-materia && { dump | trim; exit 5; } || exit 2;;
+        try highlight --out-format=xterm256 --base16 -s tomorrow-night "$path" && { dump | trim; exit 5; } || exit 2;;
     # Ascii-previews of images:
     image/*)
         img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
