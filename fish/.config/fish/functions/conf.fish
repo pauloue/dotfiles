@@ -1,13 +1,11 @@
 function conf
-    set -l fish ~/.config/fish/config.fish
-    set -l git ~/.config/git/config
-    set -l sway ~/.config/sway/config
-    set -l tmux ~/.tmux.conf
-    set -l vim ~/.vimrc
-
-    if test "$argv"
-        $EDITOR $$argv
-    else
-        ranger --cmd='set hidden_filter ^\.git(ignore)?$' ~/src/dotfiles
+    switch "$argv"
+        case alacritty; $EDITOR ~/.config/alacritty/alacritty.yml
+        case fish;      $EDITOR ~/.config/fish/config.fish
+        case git;       $EDITOR ~/.config/git/config
+        case sway;      $EDITOR ~/.config/sway/config
+        case vim;       $EDITOR ~/.vimrc
+        case '*'
+            ranger --cmd='set hidden_filter ^\.git(ignore)?$' ~/src/dotfiles
     end
 end
