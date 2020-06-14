@@ -12,15 +12,15 @@ set cmdheight=2
 set showcmd
 set scrolloff=3
 set wildmenu wildignorecase wildmode=longest:full,full
+set number relativenumber
+set splitbelow splitright
 set mouse=a
 set belloff=all
 set ttimeoutlen=100
 set backspace=indent,eol,start
-set number relativenumber
 set textwidth=80
 set colorcolumn=81
-set foldmethod=indent
-set nofoldenable
+set foldmethod=syntax foldlevelstart=99
 set conceallevel=2
 set formatoptions-=t
 set formatoptions+=j
@@ -35,12 +35,13 @@ set softtabstop=-1
 set expandtab
 set autoindent
 
+let c_no_comment_fold = 1
 let c_no_curly_error = 1
-let g:tex_flavor = 'latex'
-let g:vcm_direction = 'p'
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_new_list_item_indent = 0
+let tex_flavor = 'latex'
+let vcm_direction = 'p'
+let vim_markdown_auto_insert_bullets = 0
+let vim_markdown_frontmatter = 1
+let vim_markdown_new_list_item_indent = 0
 
 " Yank/put to/from system clipboard
 noremap <leader>y "+y
@@ -55,7 +56,6 @@ nnoremap <leader>z 1z=
 
 " vimdiff
 if &diff
-  map <leader>d :diffget<CR>
   map <leader>1 :diffget LOCAL<CR>
   map <leader>2 :diffget BASE<CR>
   map <leader>3 :diffget REMOTE<CR>

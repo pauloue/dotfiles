@@ -1,3 +1,8 @@
+window:
+  dimensions:
+    columns: 100
+    lines: 30
+
 scrolling:
   multiplier: 5
 
@@ -33,4 +38,4 @@ colors:
     white:   '#eaeaea'
 
 key_bindings:
-  - { key: N,      mods: Control|Shift,            action: SpawnNewInstance }
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }

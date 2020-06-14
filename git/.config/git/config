@@ -10,11 +10,12 @@
 	ca = commit -a
 	b = branch
 	co = checkout
-[diff]
-	tool = vim -d
-[merge]
-	tool = vim -d
-[difftool]
-	prompt = false
 [rebase]
 	autoSquash = true
+[merge]
+	tool = vimdiff
+[mergetool]
+	keepBackup = false
+	prompt = false
+[mergetool "vimdiff"]
+	path = nvim
