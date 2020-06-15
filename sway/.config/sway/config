@@ -146,7 +146,8 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     bindsym $mod+7 workspace 7
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
-    bindsym $mod+Tab exec aworkspace switch
+    bindsym $mod+Tab workspace back_and_forth
+    bindsym $mod+grave exec aworkspace switch
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -157,7 +158,8 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     bindsym $mod+Shift+7 move container to workspace 7
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+Tab exec aworkspace move
+    bindsym $mod+Shift+Tab move container to workspace back_and_forth
+    bindsym $mod+Shift+grave exec aworkspace move
 
     # Switch to next/prev workspace
     bindsym $mod+n workspace next
