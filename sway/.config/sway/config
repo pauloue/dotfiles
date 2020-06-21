@@ -48,7 +48,7 @@ exec swayidle -w \
 ### Input configuration
 #
 input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_options caps:escape,grp:alt_space_toggle
+    xkb_options caps:escape_shifted_capslock,grp:alt_space_toggle
     xkb_layout us,us
     xkb_variant ,rus
 }
@@ -97,9 +97,9 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     bindsym Ctrl+Print exec grimshot save window
 
     # Volume controls
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym Mod1+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
     # Lock the screen
     bindsym $mod+0 exec swaylock -c 1d1f21

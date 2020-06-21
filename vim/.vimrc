@@ -70,12 +70,12 @@ tnoremap <Esc> <C-\><C-n>
 ca vb vert sb
 
 " General file type settings
-au BufEnter .luacheckrc setl noet ts=4
+au BufNewFile,BufRead .luacheckrc setl noet ts=4
 au FileType c setl noet ts=4
 au FileType cpp setl noet ts=4
 au FileType css setl sw=2
 au FileType gitconfig setl noet sw=8
-au FileType go setl noet ts=4
+au FileType go setl noet ts=4 fo+=ro
 au FileType html setl sw=2 fo+=t
 au FileType java setl tw=100 cc=101
 au FileType lua setl sw=3
@@ -86,7 +86,7 @@ au FileType text setl fo+=t
 au FileType vim setl sw=2
 au FileType yaml setl sw=2
 
-au BufEnter ~/src/minetest/*.lua setl noet ts=4 sw=4
+au BufNewFile,BufRead ~/src/minetest/*.lua setl noet ts=4 sw=4
 
 if has('nvim')
   au TermOpen * setl nospell
