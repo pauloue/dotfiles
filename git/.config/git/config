@@ -10,6 +10,8 @@
 	ca = commit -a
 	b = branch
 	co = checkout
+[pull]
+	rebase = true
 [rebase]
 	autoSquash = true
 [merge]
