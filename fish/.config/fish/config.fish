@@ -3,6 +3,12 @@ set fish_greeting
 set -gx EDITOR nvim
 set -gx GOPATH ~/.local/share/go
 
+if test "$ANDROID_DATA"
+    set notesdir ~/notes
+else
+    set notesdir ~/Documents/notes
+end
+
 # Tomorrow Night colors
 set -g fish_color_command magenta
 set -g fish_color_quote green
@@ -29,14 +35,18 @@ alias dnfr "sudo dnf remove"
 alias diff "diff --color"
 alias gdb "gdb -q"
 alias vim nvim
-alias notes "ranger ~/Documents/notes"
-alias todo "vim ~/Documents/notes/todo.md"
+alias notes "ranger $notesdir"
+alias todo "vim $notesdir/todo.md"
 
 if status is-login
-    set -gx PATH ~/bin ~/.local/bin ~/.cargo/bin $GOPATH/bin /usr/sbin $PATH
-    eval (~/.luarocks/bin/luarocks path)
+    if test "$ANDROID_DATA"
+        set -gx PATH ~/bin $PATH
+    else
+        set -gx PATH ~/bin ~/.local/bin ~/.cargo/bin $GOPATH/bin /usr/sbin $PATH
+        eval (~/.luarocks/bin/luarocks path)
 
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        sway
+        if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+            sway
+        end
     end
 end

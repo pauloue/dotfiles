@@ -1,11 +1,16 @@
 #!/bin/sh
 
-cd ~/Documents/notes || exit
+set -e
+
+if [ "$ANDROID_DATA" ]; then
+    cd ~/notes
+else
+    cd ~/Documents/notes
+fi
 
 gitstatus=$(git status --porcelain)
 if [ "$gitstatus" ]; then
-    git add .
-    git commit -m "$gitstatus"
+    git commit -m "$gitstatus" .
     git pull --rebase
     git push
 else
