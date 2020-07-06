@@ -1,2 +1,5 @@
 refresh-on-startup yes
 browser firefox
+color listfocus black blue bold
+color listfocus_unread black blue bold
+color info white black bold
