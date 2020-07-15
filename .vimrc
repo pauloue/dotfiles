@@ -71,6 +71,7 @@ ca vb vert sb
 
 " General file type settings
 au FileType css setl et sw=2
+au FileType gitcommit setl et sw=4
 au FileType gitconfig setl ts=8
 au FileType go setl fo+=ro
 au FileType html setl et sw=2 fo+=t
