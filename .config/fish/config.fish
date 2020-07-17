@@ -1,7 +1,8 @@
 set fish_greeting
 
-set -gx EDITOR nvim
+set -gx EDITOR vim
 set -gx GOPATH ~/.local/share/go
+set -gx MOZ_ENABLE_WAYLAND 1
 
 if test "$ANDROID_DATA"
     set notesdir ~/notes
@@ -34,7 +35,6 @@ alias dnfr "sudo dnf remove"
 
 alias diff "diff --color"
 alias gdb "gdb -q"
-alias vim nvim
 alias notes "ranger $notesdir"
 alias todo "vim $notesdir/todo.md"
 
