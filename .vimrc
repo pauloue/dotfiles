@@ -31,7 +31,6 @@ set spell
 set cinoptions+=:0
 set completeopt+=menuone,noselect
 
-set tabstop=4
 set shiftwidth=0
 set softtabstop=-1
 set autoindent
@@ -70,12 +69,12 @@ tnoremap <Esc> <C-\><C-n>
 ca vb vert sb
 
 " General file type settings
+au FileType c setl ts=4
 au FileType css setl et sw=2
 au FileType gitcommit setl et sw=4
-au FileType gitconfig setl ts=8
-au FileType go setl fo+=ro
+au FileType go setl ts=4 fo+=ro
 au FileType html setl et sw=2 fo+=t
-au FileType java setl tw=100 cc=101
+au FileType java setl ts=4 tw=100 cc=101
 au FileType lua setl et sw=3
 au FileType markdown setl et
 au FileType python setl tw=79 cc=80
