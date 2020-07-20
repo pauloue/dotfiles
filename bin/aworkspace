@@ -4,7 +4,7 @@ set -e
 ws=$(swaymsg -t get_workspaces | jq -r .[].name | dmenu -i -p "Workspace:")
 if [ "$1" = "switch" ]
 then
-    swaymsg "workspace $ws"
+	swaymsg "workspace $ws"
 else
-    swaymsg "move container to workspace $ws"
+	swaymsg "move container to workspace $ws"
 fi

@@ -3,16 +3,16 @@
 set -e
 
 if [ "$ANDROID_DATA" ]; then
-    cd ~/notes
+	cd ~/notes
 else
-    cd ~/Documents/notes
+	cd ~/Documents/notes
 fi
 
 gitstatus=$(git status --porcelain)
 if [ "$gitstatus" ]; then
-    git commit -m "$gitstatus" .
-    git pull --rebase
-    git push
+	git commit -m "$gitstatus" .
+	git pull --rebase
+	git push
 else
-    git pull
+	git pull
 fi
