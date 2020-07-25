@@ -76,10 +76,10 @@ au FileType go setl ts=4 fo+=ro
 au FileType html setl et sw=2 fo+=t
 au FileType java setl ts=4 tw=100 cc=101
 au FileType lua setl et sw=3
-au FileType markdown setl et
+au FileType markdown setl et sw=4
 au FileType python setl tw=79 cc=80
-au FileType tex setl et fo+=t
-au FileType text setl et fo+=t
+au FileType tex setl et sw=4 fo+=t
+au FileType text setl et sw=4 fo+=t
 au FileType vim setl et sw=2
 au FileType yaml setl et sw=2
 

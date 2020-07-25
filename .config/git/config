@@ -21,3 +21,5 @@
 	prompt = false
 [mergetool "vimdiff"]
 	path = nvim
+[diff]
+	colorMoved = default
