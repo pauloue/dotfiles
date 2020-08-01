@@ -22,4 +22,4 @@
 [mergetool "vimdiff"]
 	path = nvim
 [diff]
-	colorMoved = default
+	colorMoved = dimmed-zebra

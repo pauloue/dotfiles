@@ -70,6 +70,7 @@ ca vb vert sb
 
 " General file type settings
 au FileType c setl ts=4
+au FileType cpp setl ts=4
 au FileType css setl et sw=2
 au FileType gitcommit setl et sw=4
 au FileType go setl ts=4 fo+=ro
