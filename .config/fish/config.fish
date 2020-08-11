@@ -36,7 +36,6 @@ alias dnfr "sudo dnf remove"
 alias diff "diff --color"
 alias gdb "gdb -q"
 alias notes "ranger $notesdir"
-alias todo "vim $notesdir/todo.md"
 
 if status is-login
     if test "$ANDROID_DATA"
