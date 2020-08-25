@@ -47,7 +47,7 @@ exec swayidle -w \
 ### Input configuration
 #
 input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_options caps:escape_shifted_capslock,grp:alt_space_toggle,compose:prsc
+    xkb_options caps:escape_shifted_capslock,grp:alt_space_toggle
     xkb_layout us,us
     xkb_variant ,rus
 }
