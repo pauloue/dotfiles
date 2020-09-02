@@ -30,6 +30,7 @@ set ignorecase smartcase
 set spell
 set cinoptions+=:0
 set completeopt+=menuone,noselect
+set langmap=АБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,абцдефгхийклмнопярстужвьыз;abcdefghijklmnopqrstuvwxyz
 
 set shiftwidth=0
 set softtabstop=-1
@@ -70,6 +71,7 @@ ca vb vert sb
 
 " General file type settings
 au FileType c setl ts=4
+au FileType conf setl et sw=4
 au FileType cpp setl ts=4
 au FileType css setl et sw=2
 au FileType gitcommit setl et sw=4
@@ -79,12 +81,13 @@ au FileType java setl ts=4 tw=100 cc=101
 au FileType lua setl et sw=3
 au FileType markdown setl et sw=4
 au FileType python setl tw=79 cc=80
-au FileType tex setl et sw=4 fo+=t
+au FileType sql setl et sw=4
+au FileType tex setl et sw=2 fo+=t
 au FileType text setl et sw=4 fo+=t
 au FileType vim setl et sw=2
 au FileType yaml setl et sw=2
 
-au BufNewFile,BufRead ~/src/minetest/*.lua setl noet sw=4
+au BufNewFile,BufRead ~/src/minetest/*.lua setl noet ts=4 sw=4
 
 if has('nvim')
   au TermOpen * setl nospell
