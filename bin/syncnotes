@@ -10,7 +10,8 @@ fi
 
 gitstatus=$(git status --porcelain)
 if [ "$gitstatus" ]; then
-	git commit -m "$gitstatus" .
+	git add .
+	git commit -m "$gitstatus"
 	git pull --rebase
 	git push
 else
