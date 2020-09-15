@@ -162,8 +162,8 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
     bindsym --to-code $mod+Shift+grave exec aworkspace move
 
     # Switch to next/prev workspace
-    bindsym --to-code $mod+n workspace next
-    bindsym --to-code $mod+Shift+n workspace prev
+    bindsym --to-code $mod+n workspace next_on_output
+    bindsym --to-code $mod+Shift+n workspace prev_on_output
 
     # Move workspace to other monitor
     bindsym --to-code $mod+x move workspace to output up
