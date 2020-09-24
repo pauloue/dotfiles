@@ -4,4 +4,4 @@ IFS='
 '
 tmpfile=$(mktemp)
 ranger --choosefiles "$tmpfile"
-rifle $(cat "$tmpfile")
+[ -s "$tmpfile" ] && rifle $(cat "$tmpfile")
