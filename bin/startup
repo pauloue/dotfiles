@@ -3,4 +3,4 @@ swaymsg workspace --no-auto-back-and-forth 1
 swaymsg exec firefox
 swaymsg workspace 2
 swaymsg exec 'alacritty --working-directory ~/Documents/notes -e vim -S'
-swaymsg 'fullscreen; fullscreen'
+swaymsg 'fullscreen; fullscreen' # make sure vim windows are properly sized

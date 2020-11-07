@@ -1,0 +1,12 @@
+#!/bin/sh
+# Open side-by-side terminals in stacking mode.
+swaymsg layout splith
+swaymsg exec alacritty
+swaymsg exec alacritty
+swaymsg -t subscribe "['window']"
+swaymsg -t subscribe "['window']"
+swaymsg splitv
+swaymsg layout stacking
+swaymsg focus left
+swaymsg splitv
+swaymsg layout stacking
