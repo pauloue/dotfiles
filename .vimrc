@@ -38,6 +38,7 @@ set autoindent
 
 let c_no_comment_fold = 1
 let c_no_curly_error = 1
+let rustfmt_autosave = 1
 let tex_flavor = 'latex'
 let vim_markdown_auto_insert_bullets = 0
 let vim_markdown_frontmatter = 1
@@ -79,6 +80,7 @@ au FileType go setl ts=4 fo+=ro
 au FileType html setl et sw=2 fo+=t
 au FileType java setl ts=4 tw=100 cc=101
 au FileType lua setl et sw=3
+au FileType mail setl et sw=4
 au FileType markdown setl et sw=4
 au FileType ocaml setl sw=2
 au FileType python setl tw=79 cc=80
