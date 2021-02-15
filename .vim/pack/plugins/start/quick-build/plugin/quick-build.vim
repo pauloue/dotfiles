@@ -1,19 +1,19 @@
-" Use F8 to compile, F9 to make, F10 to lint, and F5 to run
+" Use F8 to build, F9 to make, F10 to lint, and F5 to run
 
 let s:commands = {
 \ 'c': {
-\   'compile': 'gcc -Wall -o %:r %',
+\   'build': 'gcc -Wall -o %:r %',
 \   'run': './%:r',
 \ },
 \ 'cpp': {
-\   'compile': 'g++ -Wall -o %:r %',
+\   'build': 'g++ -Wall -o %:r %',
 \   'run': './%:r',
 \ },
 \ 'fish': {
 \   'run': 'fish %',
 \ },
 \ 'java': {
-\   'compile': 'javac %',
+\   'build': 'javac %',
 \   'run': 'java %:r',
 \ },
 \ 'lua': {
@@ -21,18 +21,23 @@ let s:commands = {
 \   'run': 'lua %',
 \ },
 \ 'markdown': {
-\   'compile': 'pandoc -o %:r.pdf %',
+\   'build': 'pandoc -o %:r.pdf %',
 \ },
 \ 'python': {
 \   'lint': 'pycodestyle %',
 \   'run': 'python3 %',
+\ },
+\ 'rust': {
+\   'build': 'cargo check',
+\   'lint': 'cargo clippy',
+\   'run': 'cargo run',
 \ },
 \ 'sh': {
 \   'lint': 'shellcheck %',
 \   'run': 'sh %',
 \ },
 \ 'tex': {
-\   'compile': 'rubber --inplace -d %',
+\   'build': 'rubber --inplace -d %',
 \ },
 \ 'zsh': {
 \   'run': 'zsh %',
@@ -48,7 +53,7 @@ function! QuickBuild(action)
   endif
 endfunction
 
-nnoremap <F8> :<C-U>call QuickBuild('compile')<CR>
+nnoremap <F8> :<C-U>call QuickBuild('build')<CR>
 nnoremap <F10> :<C-U>call QuickBuild('lint')<CR>
 nnoremap <F5> :<C-U>call QuickBuild('run')<CR>
 nnoremap <F9> :update \| :make<CR>
