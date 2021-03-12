@@ -79,11 +79,13 @@ au FileType gitcommit setl et sw=4
 au FileType go setl ts=4 fo+=ro
 au FileType html setl et sw=2 fo+=t
 au FileType java setl ts=4 tw=100 cc=101
+au FileType lisp setl et sw=2
 au FileType lua setl et sw=3
 au FileType mail setl et sw=4
 au FileType markdown setl et sw=4
 au FileType ocaml setl sw=2
 au FileType python setl tw=79 cc=80
+au FileType rust setl cc=100
 au FileType sql setl et sw=4
 au FileType tex setl et sw=2 fo+=t
 au FileType text setl et sw=4 fo+=t
