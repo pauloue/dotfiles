@@ -75,6 +75,7 @@ au FileType c setl ts=4
 au FileType conf setl et sw=4
 au FileType cpp setl ts=4
 au FileType css setl et sw=2
+au FileType fish setl et sw=4
 au FileType gitcommit setl et sw=4
 au FileType go setl ts=4 fo+=ro
 au FileType html setl et sw=2 fo+=t
