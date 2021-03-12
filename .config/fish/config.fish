@@ -35,6 +35,7 @@ alias dnfr "sudo dnf remove"
 
 alias diff "diff --color"
 alias gdb "gdb -q"
+alias sbcl "rlwrap sbcl --noinform"
 alias notes "ranger $notesdir"
 
 if status is-login
