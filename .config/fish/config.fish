@@ -38,10 +38,6 @@ alias gdb "gdb -q"
 alias sbcl "rlwrap sbcl --noinform"
 alias notes "ranger $notesdir"
 
-if command -q nvim
-    alias vim nvim
-end
-
 if status is-login
     if test "$ANDROID_DATA"
         set -gx PATH ~/bin $PATH
