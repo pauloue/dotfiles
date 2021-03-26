@@ -38,6 +38,7 @@ set autoindent
 
 let c_no_comment_fold = 1
 let c_no_curly_error = 1
+let paredit_shortmaps = 1
 let rustfmt_autosave = 1
 let tex_flavor = 'latex'
 let vim_markdown_auto_insert_bullets = 0

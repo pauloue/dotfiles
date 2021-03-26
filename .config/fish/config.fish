@@ -33,10 +33,11 @@ alias dnfu "sudo dnf upgrade"
 alias dnfi "sudo dnf install"
 alias dnfr "sudo dnf remove"
 
+alias dash "rlwrap dash"
 alias diff "diff --color"
 alias gdb "gdb -q"
-alias sbcl "rlwrap sbcl --noinform"
 alias notes "ranger $notesdir"
+alias sbcl "rlwrap sbcl --noinform"
 
 if status is-login
     if test "$ANDROID_DATA"

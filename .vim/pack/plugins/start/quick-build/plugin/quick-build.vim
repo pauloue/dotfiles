@@ -23,14 +23,12 @@ let s:commands = {
 \ 'markdown': {
 \   'build': 'pandoc -o %:r.pdf %',
 \ },
+\ 'markdown.pandoc': {
+\   'build': 'pandoc -o %:r.pdf %',
+\ },
 \ 'python': {
 \   'lint': 'pycodestyle %',
 \   'run': 'python3 %',
-\ },
-\ 'rust': {
-\   'build': 'cargo check',
-\   'lint': 'cargo clippy',
-\   'run': 'cargo run',
 \ },
 \ 'sh': {
 \   'lint': 'shellcheck %',
