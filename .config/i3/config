@@ -10,18 +10,18 @@ set $down j
 set $up k
 set $right l
 # Terminal
-set $term gnome-terminal
+set $term alacritty
 
 font pango:monospace 9
 
-# Hide title bars
-new_window pixel
-# Repeating a workspace switch command switches back to prior workspace
+default_border pixel
+workspace_layout tabbed
 workspace_auto_back_and_forth yes
 
-# for_window settings
-for_window [class="Minetest"] floating enable
+# Per-application settings
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Minetest"] floating enable
+for_window [instance="rangerchooser"] floating enable
 
 ### Key bindings
 #
@@ -34,7 +34,7 @@ for_window [class="Gnome-calculator"] floating enable
     # nautilus
     bindsym $mod+F2 exec nautilus
     # ranger
-    bindsym $mod+F3 exec $term -t Ranger -- ranger
+    bindsym $mod+F3 exec $term --class rangerchooser -e rangerchooser
     # calculator
     bindsym $mod+F4 exec gnome-calculator
 
@@ -56,9 +56,9 @@ for_window [class="Gnome-calculator"] floating enable
     bindsym --release Shift+Print exec --no-startup-id gnome-screenshot -i
 
     # volume controls
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym Mod1+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
     # lock the screen
     bindsym $mod+0 exec i3lock -ec 323232
@@ -108,7 +108,8 @@ for_window [class="Gnome-calculator"] floating enable
     bindsym $mod+7 workspace 7
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
-    bindsym $mod+Tab exec aworkspace switch
+    bindsym $mod+Tab workspace back_and_forth
+    bindsym $mod+grave exec aworkspace switch
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -119,11 +120,15 @@ for_window [class="Gnome-calculator"] floating enable
     bindsym $mod+Shift+7 move container to workspace 7
     bindsym $mod+Shift+8 move container to workspace 8
     bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+Tab exec aworkspace move
+    bindsym $mod+Shift+Tab move container to workspace back_and_forth
+    bindsym $mod+Shift+grave exec aworkspace move
 
     # switch to next/prev workspace
-    bindsym $mod+n workspace next
-    bindsym $mod+Shift+n workspace prev
+    bindsym $mod+n workspace next_on_output
+    bindsym $mod+Shift+n workspace prev_on_output
+
+    # move workspace to other monitor
+    bindsym $mod+x move workspace to output up
 
     # rename workspace
     bindsym $mod+r exec renamews
@@ -177,10 +182,11 @@ bindsym $mod+w mode "resize"
 # Status Bar
 #
 bar {
+    position top
     status_command i3status
     font pango:monospace 10
-    position top
     separator_symbol "  "
+
     colors {
         background #323232
         inactive_workspace #323232 #323232 #888888
