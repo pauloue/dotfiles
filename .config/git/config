@@ -19,5 +19,7 @@
 [mergetool]
 	keepBackup = false
 	prompt = false
+[mergetool "vimdiff"]
+	path = nvim
 [diff]
 	colorMoved = dimmed-zebra
