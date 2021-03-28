@@ -4,6 +4,8 @@
 [credential]
 	username = pauloue
 	helper = cache --timeout 3600
+[core]
+	pager = less -i
 [alias]
 	st = status
 	ci = commit

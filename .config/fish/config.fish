@@ -36,6 +36,7 @@ alias dnfr "sudo dnf remove"
 alias dash "rlwrap dash"
 alias diff "diff --color"
 alias gdb "gdb -q"
+alias less "less -i"
 alias notes "ranger $notesdir"
 alias sbcl "rlwrap sbcl --noinform"
 
