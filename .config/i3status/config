@@ -18,12 +18,12 @@ order += "battery all"
 order += "tztime local"
 
 ethernet _first_ {
-    format_up = "  eth %ip"
+    format_up = "  eth"
     format_down = ""
 }
 
 wireless _first_ {
-    format_up = "  %essid %ip"
+    format_up = "  %essid"
     format_down = "  wifi"
 }
 
