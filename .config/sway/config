@@ -32,7 +32,7 @@ for_window [class="zoom"] inhibit_idle visible
 
 ### Output configuration
 #
-output * background ~/Pictures/backgrounds/Wood.jpg fill
+output * bg /usr/share/backgrounds/fedora-workstation/paisaje.jpg fill
 output eDP-1 position 0 1080
 output HDMI-A-2 position 0 0
 
