@@ -235,6 +235,3 @@ bar {
 }
 
 include /etc/sway/config.d/*
-
-# https://gitlab.freedesktop.org/xorg/xserver/-/issues/731
-exec xrdb -load ~/.Xresources
