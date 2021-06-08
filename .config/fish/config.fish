@@ -41,6 +41,8 @@ alias notes "ranger $notesdir"
 alias sbcl "rlwrap sbcl --noinform"
 
 if status is-login
+    eval (ssh-agent -c)
+
     if test "$ANDROID_DATA"
         set -gx PATH ~/bin $PATH
     else

@@ -1,9 +1,6 @@
 [user]
 	name = Paul Ouellette
 	email = oue.paul18@gmail.com
-[credential]
-	username = pauloue
-	helper = cache --timeout 3600
 [core]
 	pager = less -i
 [alias]
