@@ -1,3 +1,0 @@
-#!/bin/sh
-
-xinput set-prop "pointer:MOSART Semi. 2.4G Keyboard Mouse Mouse" "libinput Middle Emulation Enabled" 1
