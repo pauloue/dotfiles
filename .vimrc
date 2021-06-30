@@ -94,8 +94,6 @@ au FileType text setl et sw=4 fo+=t
 au FileType vim setl et sw=2
 au FileType yaml setl et sw=2
 
-au BufNewFile,BufRead ~/src/minetest/*.lua setl noet ts=4 sw=4
-
 if has('nvim')
   au TermOpen * setl nospell
 else
