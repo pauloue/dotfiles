@@ -5,9 +5,9 @@ set -gx GOPATH ~/.local/share/go
 set -gx MOZ_ENABLE_WAYLAND 1
 
 if test "$ANDROID_DATA"
-    set notesdir ~/notes
+    set -gx NOTESDIR ~/notes
 else
-    set notesdir ~/Documents/notes
+    set -gx NOTESDIR ~/Documents/notes
 end
 
 # Tomorrow Night colors
@@ -37,7 +37,6 @@ alias dash "rlwrap dash"
 alias diff "diff --color"
 alias gdb "gdb -q"
 alias less "less -i"
-alias notes "ranger $notesdir"
 alias sbcl "rlwrap sbcl --noinform"
 
 if status is-login

@@ -22,3 +22,5 @@
 	path = nvim
 [diff]
 	colorMoved = dimmed-zebra
+[init]
+	defaultBranch = master
