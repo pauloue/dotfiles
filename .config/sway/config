@@ -47,19 +47,17 @@ exec swayidle -w \
 
 ### Input configuration
 #
-input "1:1:AT_Translated_Set_2_keyboard" {
+input type:keyboard {
     xkb_options caps:escape_shifted_capslock,grp:alt_space_toggle
     xkb_layout us,us
     xkb_variant ,rus
 }
-input "1739:0:Synaptics_TM3072-003" {
+input type:touchpad {
     tap enabled
     dwt disabled
     natural_scroll enabled
 }
-input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse" {
-    middle_emulation enabled
-}
+input type:pointer middle_emulation enabled
 
 ### Key bindings
 #
