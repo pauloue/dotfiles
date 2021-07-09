@@ -3,6 +3,7 @@ set fish_greeting
 set -gx EDITOR vim
 set -gx GOPATH ~/.local/share/go
 set -gx MOZ_ENABLE_WAYLAND 1
+set -gx XINITRC "$XDG_CONFIG_HOME"/X11/xinitrc
 
 if test "$ANDROID_DATA"
     set -gx NOTESDIR ~/notes
