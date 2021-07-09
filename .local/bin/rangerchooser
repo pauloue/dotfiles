@@ -1,0 +1,6 @@
+#!/bin/sh
+IFS='
+'
+tmpfile=$(mktemp)
+ranger --choosefiles "$tmpfile"
+[ -s "$tmpfile" ] && rifle $(cat "$tmpfile")

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if swaymsg -t get_tree | jq -e '.. | select(.pid?)'; then
+	swaynag -t warning \
+		-m 'You pressed the exit shortcut. Do you really want to exit sway?' \
+		-b 'Yes, exit sway' 'swaymsg exit'
+else
+	swaymsg exit
+fi

@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+cd "$NOTESDIR"
+
+if [ "$(git status --porcelain)" ]; then
+	git add .
+	git commit -m "Update"
+fi
+git pull --rebase
+
+if git status --porcelain -b | grep -q ahead; then
+	git push
+fi
