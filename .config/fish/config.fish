@@ -5,6 +5,12 @@ set -gx GOPATH ~/.local/share/go
 set -gx MOZ_ENABLE_WAYLAND 1
 set -gx XINITRC "$XDG_CONFIG_HOME"/X11/xinitrc
 
+
+# XDG Base Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local"
+
 if test "$ANDROID_DATA"
     set -gx NOTESDIR ~/notes
 else
