@@ -44,7 +44,7 @@ if status is-login
     eval (ssh-agent -c)
 
     if test "$ANDROID_DATA"
-        set -gx PATH ~/bin $PATH
+        set -gx PATH ~/.local/bin $PATH
     else
         set -gx PATH ~/bin ~/.local/bin ~/.cargo/bin $GOPATH/bin /usr/sbin $PATH
         eval (~/.luarocks/bin/luarocks path)
