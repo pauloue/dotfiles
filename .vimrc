@@ -38,6 +38,8 @@ set autoindent
 
 let c_no_comment_fold = 1
 let c_no_curly_error = 1
+let coqtail_nomap = 1
+let mucomplete#popup_direction = {'keyn': -1}
 let paredit_shortmaps = 1
 let rustfmt_autosave = 1
 let tex_flavor = 'latex'
@@ -66,12 +68,15 @@ endif
 cnoremap <C-A> <Home>
 cnoremap <C-B> <Left>
 cnoremap <C-F> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
 
 tnoremap <Esc> <C-\><C-n>
 
 ca vb vert sb
 
 " General file type settings
+au FileType bib setl et sw=4
 au FileType c setl ts=4
 au FileType conf setl et sw=4
 au FileType cpp setl ts=4
